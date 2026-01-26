@@ -4,10 +4,10 @@ import "./AboutMe.css"
 
 export const AboutMe = () => {
     return (
-        <section id={"#about"} className={"main-container"}>
+        <section id={"about"} className={"main-container"}>
             <div className={"home-page-content"}>
-                <div className={"home-page-title"}>
-                    Martial Carceles <span className={"home-page-subtitle"}>Développeur Full Stack</span>
+                <div className={"main-title"} data-text={"Martial Carceles"}>
+                    Martial Carceles <span className={"subtitle"}>Développeur Full Stack</span>
                 </div>
                 <div className={"home-page-about-me-container"}>
                     <img className={"home-page-picture"} src={picture} alt={"myself"}/>

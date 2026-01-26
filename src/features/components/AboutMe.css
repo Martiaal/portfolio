@@ -1,61 +1,6 @@
-/* --- HomePage.css --- */
-
-.main-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; /* Centre verticalement le contenu */
-
-    /* On prend toute la hauteur de l'écran moins le header (environ 90px-100px) */
-    /* Si ton header est plus grand, ajuste la valeur en px */
-    min-height: calc(100vh - 100px);
-
-    width: 100%;
-    padding: 2rem 0;
-    box-sizing: border-box;
-}
 
 .home-page-content {
     max-width: 50rem;
-}
-
-.home-page-title {
-    font-family: 'Orbitron', sans-serif;
-    position: relative;
-    font-size: 4rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    color: var(--third-color);
-    letter-spacing: -1px;
-    font-style: italic;
-    line-height: 0.9;
-    margin-bottom: 60px;
-}
-
-.home-page-title::before {
-    content: "Martial Carceles";
-    position: absolute;
-    left: -3px;
-    top: 2px;
-    width: 100%;
-    height: 100%;
-    color: var(--secondary-color);
-    z-index: -1;
-    opacity: 0.8;
-    clip-path: polygon(0 20%, 100% 20%, 100% 22%, 0 22%, 0 45%, 100% 45%, 100% 46%, 0 46%, 0 100%, 100% 60%);
-}
-
-.home-page-subtitle {
-    display: block;
-    font-size: 1.5rem;
-    font-weight: 700;
-    background: var(--secondary-color);
-    color: var(--main-bg-color);
-    width: fit-content;
-    padding: 0 15px;
-    margin-top: 5px;
-    transform: skew(-15deg);
-    box-shadow: 8px 8px 0px rgba(0, 240, 255, 0.2);
 }
 
 .home-page-about-me-container {
@@ -66,18 +11,14 @@
     margin-top: 50px;
     padding: 30px;
 
-    /* Fond jaune iconique */
     background-color: var(--third-color);
     color: var(--main-bg-color);
-
-    /* Forme asymétrique agressive */
     clip-path: polygon(4% 0, 100% 0, 100% 70%, 96% 100%, 0 100%, 0 25%);
 
     position: relative;
     border-right: 8px solid var(--secondary-color);
 }
 
-/* Les petits carrés déco style UI */
 .home-page-about-me-container::before {
     content: "R-77 // USER_PROFILE";
     position: absolute;
@@ -89,14 +30,12 @@
     opacity: 0.6;
 }
 
-/* L'image style "Avatar Scan" */
 .home-page-picture {
     width: 160px;
     height: 160px;
     object-fit: cover;
     background: var(--main-bg-color);
     padding: 5px;
-    /* Découpe l'image aussi pour le style */
     clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 10%);
     border: 2px solid var(--main-bg-color);
     filter: sepia(100%) hue-rotate(-50deg) saturate(300%) contrast(120%); /* Effet jaune/noir sur l'image */
@@ -108,7 +47,6 @@
     transform: scale(1.05);
 }
 
-/* Texte avec une bordure néon interne */
 .home-page-about-me-text {
     font-family: 'Rajdhani', sans-serif;
     font-size: 1.2rem;

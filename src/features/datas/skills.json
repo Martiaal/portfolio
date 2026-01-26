@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Mes Compétences",
+    "subtitle": "Frontend",
+    "skills": [
+      {
+        "name": "React",
+        "logo": "https://cdn.worldvectorlogo.com/logos/react-2.svg",
+        "description": "Développement d'interfaces réactives avec hooks et gestion d'état complexe.",
+        "level": 90
+      },
+      {
+        "name": "TypeScript",
+        "logo": "https://cdn.worldvectorlogo.com/logos/typescript.svg",
+        "description": "Sécurisation du code via un typage strict et une architecture robuste.",
+        "level": 85
+      }
+    ]
+  },
+  {
+    "subtitle": "Backend",
+    "skills": [
+      {
+        "name": "Django",
+        "logo": "https://cdn.worldvectorlogo.com/logos/django.svg",
+        "description": "Développement d'applications web robustes avec une architecture MVC.",
+        "level": 80
+      },
+      {
+        "name": "PHP",
+        "logo": "https://cdn.worldvectorlogo.com/logos/php-1.svg",
+        "description": "Développement de sites web dynamiques et gestion de bases de données.",
+        "level": 75
+      }
+    ]
+  }
+]

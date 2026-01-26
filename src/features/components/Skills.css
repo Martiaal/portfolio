@@ -1,0 +1,133 @@
+/* Titre de section */
+.section-title-cyber {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--secondary-color);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    text-shadow: 3px 3px 0px var(--third-color);
+}
+
+/* Grille */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 70rem;
+    padding: 0 20px;
+}
+
+/* Le Module Skill */
+.skill-module {
+    background: rgba(0, 240, 255, 0.05);
+    border: 1px solid var(--secondary-color);
+    padding: 20px;
+    position: relative;
+    transition: all 0.3s ease;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 90% 100%, 0 100%);
+}
+
+.skill-module:hover {
+    background: rgba(0, 240, 255, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+}
+
+.skill-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.3);
+    padding-bottom: 10px;
+}
+
+.skill-icon {
+    width: 40px;
+    height: 40px;
+    filter: drop-shadow(0 0 5px var(--secondary-color));
+}
+
+.skill-name {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--third-color);
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.skill-id {
+    margin-left: auto;
+    font-size: 0.6rem;
+    color: var(--secondary-color);
+    opacity: 0.6;
+}
+
+.skill-description {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    height: 60px; /* Aligne les cartes */
+    color: var(--normal-text);
+}
+
+/* Container de la jauge */
+.skill-level-container {
+    margin-top: 20px;
+}
+
+/* Header de la jauge (Label + % ) */
+.skill-level-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 6px;
+}
+
+.skill-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.65rem;
+    color: var(--secondary-color);
+    letter-spacing: 1px;
+    opacity: 0.8;
+    animation: skill-flicker 3s infinite; /* Petit effet glitch discret */
+}
+
+.skill-level-percentage {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    color: var(--third-color); /* On passe le % en jaune pour le faire ressortir */
+    font-weight: 900;
+}
+
+/* La barre */
+.skill-level-bar {
+    height: 6px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    position: relative;
+    padding: 2px; /* Créé un effet de bordure interne */
+}
+
+.skill-level-progress {
+    height: 100%;
+    background: var(--secondary-color);
+    box-shadow: 0 0 15px var(--secondary-color);
+    transition: width 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Animation de clignotement pour le label */
+@keyframes skill-flicker {
+    0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% { opacity: 0.8; }
+    20%, 21.999%, 63%, 63.999%, 65%, 69.999% { opacity: 0.2; }
+}
+
+/* Décos de coins */
+.skill-corner-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-top: 3px solid var(--third-color);
+    border-right: 3px solid var(--third-color);
+}
