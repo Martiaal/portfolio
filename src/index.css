@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap');
+
 :root {
-  font-family: Inter, sans-serif;
+  --normal-text: white;
+  --main-bg-color: black;
+  --secondary-color: #00f0ff;
+  --third-color: #fcee0a;
+  --app-border: 0.15rem solid var(--secondary-color);
+
+  font-family: 'Orbitron', sans-serif;
+  background: var(--main-bg-color);
+  color: var(--normal-text);
+}
+
+a {
+  color: var(--normal-text);
+  text-decoration: none;
 }
