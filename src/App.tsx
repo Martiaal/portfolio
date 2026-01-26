@@ -1,13 +1,13 @@
-import './App.css'
-import {HashRouter as Router } from 'react-router-dom';
+import {HashRouter as Router} from 'react-router-dom';
 import { Header } from "./components/Header";
-import './App.css'
+import {HomePage} from "./features/Home.tsx";
 
 function App() {
 
       return (
           <Router>
               <Header/>
+              <HomePage/>
           </Router>
       )
 }

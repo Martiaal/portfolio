@@ -7,12 +7,22 @@
   --third-color: #fcee0a;
   --app-border: 0.15rem solid var(--secondary-color);
 
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Rajdhani', sans-serif;
   background: var(--main-bg-color);
   color: var(--normal-text);
+  scroll-padding-top: 80px;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 a {
   color: var(--normal-text);
   text-decoration: none;
 }
+
+body {
+  margin: 0;
+}
+
