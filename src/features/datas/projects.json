@@ -1,0 +1,36 @@
+[
+  {
+    "category": "Web",
+    "items": [
+      {
+        "name": "Eiffel Time",
+        "image": "images/projects/eiffel_time.png",
+        "description": "Interface universitaire permettant assurant la gestion des notes / absences / appels / emploi du temps pour les élèves / professeurs / secrétaires et gestionnaires",
+        "tags": ["React", "Django"]
+      },
+      {
+        "name": "Eiffel Time",
+        "image": "images/projects/eiffel_time.png",
+        "description": "Interface universitaire permettant assurant la gestion des notes / absences / appels / emploi du temps pour les élèves / professeurs / secrétaires et gestionnaires",
+        "tags": ["React", "Django"]
+      },
+      {
+        "name": "Eiffel Time",
+        "image": "images/projects/eiffel_time.png",
+        "description": "Interface universitaire permettant assurant la gestion des notes / absences / appels / emploi du temps pour les élèves / professeurs / secrétaires et gestionnaires",
+        "tags": ["React", "Django"]
+      }
+    ]
+  },
+  {
+    "category": "Mobile",
+    "items": [
+      {
+        "name": "Eiffel Time",
+        "image": "images/projects/eiffel_time.png",
+        "description": "Interface universitaire permettant assurant la gestion des notes / absences / appels / emploi du temps pour les élèves / professeurs / secrétaires et gestionnaires",
+        "tags": ["React", "Django"]
+      }
+    ]
+  }
+]
