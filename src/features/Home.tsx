@@ -1,9 +1,9 @@
-import {AboutMe} from "./components/AboutMe.tsx";
-import {Skills} from "./components/Skills.tsx";
-import {SoftSkills} from "./components/SoftSkills.tsx";
-import {Projects} from "./components/Projects.tsx";
-import {Experience} from "./components/Experience.tsx";
-import {ButSkills} from "./components/ButSkills.tsx";
+import {AboutMe} from "./about-me/AboutMe.tsx";
+import {Skills} from "./skills/Skills.tsx";
+import {SoftSkills} from "./soft-skills/SoftSkills.tsx";
+import {Projects} from "./projects/Projects.tsx";
+import {Experience} from "./experience/Experience.tsx";
+import {ButSkills} from "./but-skills/ButSkills.tsx";
 
 
 export const HomePage = () => {

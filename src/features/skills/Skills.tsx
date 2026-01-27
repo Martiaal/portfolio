@@ -1,6 +1,6 @@
-import { SkillCard } from "./SkillCard";
-import type { SkillsData } from "../types.ts"
-import skillsData from "../datas/skills.json";
+import { SkillCard } from "./SkillCard.tsx";
+import type { SkillsData } from "../../types/types.ts"
+import skillsData from "../../datas/skills.json";
 import "./Skills.css";
 import {useState} from "react";
 

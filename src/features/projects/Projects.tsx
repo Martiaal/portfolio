@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { ProjectCard } from "./ProjectCard";
-import projectsData from "../datas/projects.json";
+import { ProjectCard } from "./ProjectCard.tsx";
+import projectsData from "../../datas/projects.json";
 import "./Projects.css";
 
 export const Projects = () => {
