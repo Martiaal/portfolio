@@ -1,6 +1,5 @@
 [
   {
-    "title": "Mes Compétences",
     "subtitle": "Frontend",
     "skills": [
       {
@@ -12,6 +11,24 @@
       {
         "name": "TypeScript",
         "logo": "https://cdn.worldvectorlogo.com/logos/typescript.svg",
+        "description": "Sécurisation du code via un typage strict et une architecture robuste.",
+        "level": 85
+      },
+      {
+        "name": "HTML",
+        "logo": "https://logospng.org/download/html-5/logo-html-5-768.png",
+        "description": "Sécurisation du code via un typage strict et une architecture robuste.",
+        "level": 85
+      },
+      {
+        "name": "CSS",
+        "logo": "https://logospng.org/download/css-3/logo-css-3-2048.png",
+        "description": "Sécurisation du code via un typage strict et une architecture robuste.",
+        "level": 85
+      },
+      {
+        "name": "Javascript",
+        "logo": "https://static.vecteezy.com/system/resources/previews/027/127/560/large_2x/javascript-logo-javascript-icon-transparent-free-png.png",
         "description": "Sécurisation du code via un typage strict et une architecture robuste.",
         "level": 85
       }
@@ -28,7 +45,72 @@
       },
       {
         "name": "PHP",
-        "logo": "https://cdn.worldvectorlogo.com/logos/php-1.svg",
+        "logo": "https://www.php.net/images/logos/new-php-logo.svg",
+        "description": "Développement de sites web dynamiques et gestion de bases de données.",
+        "level": 75
+      }
+    ,
+      {
+        "name": "Node JS",
+        "logo": "https://logospng.org/download/node-js/logo-node-js-1024.png",
+        "description": "Développement de sites web dynamiques et gestion de bases de données.",
+        "level": 75
+      }
+    ]
+  },
+  {
+    "subtitle": "Database",
+    "skills": [
+      {
+        "name": "MySQL",
+        "logo": "https://pngimg.com/uploads/mysql/mysql_PNG23.png",
+        "description": "Développement d'applications web robustes avec une architecture MVC.",
+        "level": 80
+      },
+      {
+        "name": "Postgre SQL",
+        "logo": "https://logonoid.com/images/postgresql-logo.png",
+        "description": "Développement de sites web dynamiques et gestion de bases de données.",
+        "level": 75
+      },
+      {
+        "name": "SQLite",
+        "logo": "https://logospng.org/download/sqlite/sqlite-512.png",
+        "description": "Développement de sites web dynamiques et gestion de bases de données.",
+        "level": 75
+      },
+      {
+        "name": "MongoDB",
+        "logo": "https://images.seeklogo.com/logo-png/48/2/mongodb-logo-png_seeklogo-481256.png",
+        "description": "Développement de sites web dynamiques et gestion de bases de données.",
+        "level": 75
+      }
+    ]
+  },
+  {
+    "subtitle": "Other languages",
+    "skills": [
+      {
+        "name": "Python",
+        "logo": "https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png",
+        "description": "Développement d'applications web robustes avec une architecture MVC.",
+        "level": 80
+      },
+      {
+        "name": "Java",
+        "logo": "https://i.pinimg.com/originals/79/5e/bb/795ebb5f4a470cd7242136237f61fc53.png",
+        "description": "Développement de sites web dynamiques et gestion de bases de données.",
+        "level": 75
+      },
+      {
+        "name": "C",
+        "logo": "https://www.pngkit.com/png/full/101-1010012_download-png.png",
+        "description": "Développement de sites web dynamiques et gestion de bases de données.",
+        "level": 75
+      },
+      {
+        "name": "C++",
+        "logo": "https://logodix.com/logo/1137946.png",
         "description": "Développement de sites web dynamiques et gestion de bases de données.",
         "level": 75
       }

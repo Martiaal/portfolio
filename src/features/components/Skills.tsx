@@ -6,11 +6,13 @@ import "./Skills.css";
 export const Skills = () => {
     return (
         <section id="skills" className="second-container">
+            <div className="main-title" data-text={"Mes compétences"}>
+                Mes compétences
+            </div>
             {
                 skillsData.map((section: SkillSectionProps) => (
                     <SkillSections
                         key={section.subtitle}
-                        title={section.title}
                         subtitle={section.subtitle}
                         skills={section.skills}
                     />
@@ -21,17 +23,14 @@ export const Skills = () => {
 };
 
 interface SkillSectionProps {
-    title: string|undefined;
     subtitle: string;
     skills: SkillsData[];
 }
 
-const SkillSections = ({ title, subtitle, skills }: SkillSectionProps) => {
+const SkillSections = ({ subtitle, skills }: SkillSectionProps) => {
     return (
         <>
-            <div className="main-title" data-text={title ?? ""}>
-                {title} <span className={"subtitle"}>{subtitle}</span>
-            </div>
+            <span className={"subtitle"} style={{ marginBottom: "1rem" }}>{subtitle}</span>
             <div className="skills-grid">
                 {skills.map((skill) => (
                     <SkillCard

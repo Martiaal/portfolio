@@ -16,8 +16,6 @@ export const SkillCard = ({ name, logo, description, level }: SkillCardProps) =>
                 <span className="skill-id">ID_{name.substring(0, 3).toUpperCase()}</span>
             </div>
 
-            <p className="skill-description">{description}</p>
-
             <div className="skill-level-container">
                 <div className="skill-level-header">
                     <span className="skill-label">EXPÉRIENCE</span>
