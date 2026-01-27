@@ -1,12 +1,12 @@
 import {HashRouter as Router} from 'react-router-dom';
-import { Header } from "./components/Header";
+import { NavBox } from "./components/NavBox.tsx";
 import {HomePage} from "./features/Home.tsx";
 
 function App() {
 
       return (
           <Router>
-              <Header/>
+              <NavBox/>
               <HomePage/>
           </Router>
       )
