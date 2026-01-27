@@ -3,6 +3,7 @@ import {Skills} from "./components/Skills.tsx";
 import {SoftSkills} from "./components/SoftSkills.tsx";
 import {Projects} from "./components/Projects.tsx";
 import {Experience} from "./components/Experience.tsx";
+import {ButSkills} from "./components/ButSkills.tsx";
 
 
 export const HomePage = () => {
@@ -13,6 +14,7 @@ export const HomePage = () => {
             <SoftSkills/>
             <Projects/>
             <Experience/>
+            <ButSkills/>
         </>
     )
 }

@@ -1,0 +1,144 @@
+.but-container {
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 20px;
+}
+
+.but-card {
+    background-color: var(--third-color);
+    color: var(--main-bg-color);
+    padding: 40px;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 95% 100%, 0 100%, 0 5%);
+    border-right: 8px solid var(--secondary-color);
+}
+
+.but-header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.but-id-badge {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 900;
+    background: var(--main-bg-color);
+    color: var(--third-color);
+    padding: 2px 10px;
+}
+
+.but-status-pulse {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+    opacity: 0.6;
+}
+
+.but-main-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.level-tag {
+    font-size: 0.9rem;
+    border: 2px solid var(--main-bg-color);
+    padding: 2px 8px;
+    font-weight: 900;
+}
+
+.but-main-desc {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+    padding-bottom: 15px;
+}
+
+/* Grille des sous-compétences */
+.but-subskills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.subskill-module {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.subskill-module:hover {
+    background: rgba(0, 0, 0, 0.08);
+    transform: translateY(-5px);
+}
+
+.subskill-label-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.subskill-index {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    color: var(--secondary-color);
+    text-shadow: 1px 1px 0px var(--main-bg-color);
+}
+
+.subskill-label {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.subskill-justification {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    font-weight: 500;
+    font-style: italic;
+    flex-grow: 1;
+    margin-bottom: 15px;
+    padding-left: 10px;
+    border-left: 2px solid var(--main-bg-color);
+}
+
+.subskill-project-link {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.project-name {
+    color: var(--secondary-color);
+    background: var(--main-bg-color);
+    padding: 2px 6px;
+}
+
+/* Animations */
+.animate-fadeIn {
+    animation: fadeInBut 0.5s ease-out forwards;
+}
+
+@keyframes fadeInBut {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+    .but-main-title { font-size: 1.8rem; flex-direction: column; align-items: flex-start; }
+    .but-card { padding: 20px; }
+}
