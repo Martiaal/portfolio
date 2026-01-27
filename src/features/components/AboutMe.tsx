@@ -12,7 +12,9 @@ export const AboutMe = () => {
                 <div className={"home-page-about-me-container"}>
                     <img className={"home-page-picture"} src={picture} alt={"myself"}/>
                     <div className={"home-page-about-me-text"}>
-                        My name is Martial Carceles, I am a Full Stack Developer with a passion for creating innovative and efficient web applications. With a strong background in both front-end and back-end development, I specialize in building seamless user experiences and robust server-side solutions. I am dedicated to continuous learning and staying updated with the latest industry trends to deliver high-quality software solutions.
+                        Je suis Martial Carceles, un étudiant en BUT Informatique. Avec une certaine appétence pour la
+                        recherche des meilleurs patterns / architectures pour les applications. Ainsi, j'ai pu développer
+                        mes compétences de développeur Full-Stack au cours des trois dernières années.
                     </div>
                 </div>
             </div>

@@ -10,7 +10,6 @@
   font-family: 'Rajdhani', sans-serif;
   background: var(--main-bg-color);
   color: var(--normal-text);
-  scroll-padding-top: 80px;
 }
 
 html {

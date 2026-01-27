@@ -8,29 +8,34 @@ interface SkillCardProps {
 
 export const SkillCard = ({ name, logo, level }: SkillCardProps) => {
     return (
-        <div className="skill-module">
-            <div className="skill-header">
-                <img src={logo} alt={name} className="skill-icon" />
-                <h3 className="skill-name">{name}</h3>
-                <span className="skill-id">ID_{name.substring(0, 3).toUpperCase()}</span>
+        <div className="skill-module-yellow">
+            <div className="skill-card-top">
+                <div className="skill-icon-wrapper">
+                    <img src={logo} alt={name} className="skill-icon-dark" />
+                </div>
+                <div className="skill-info">
+                    <span className="skill-id-dark">TYPE_MODULE // {name.substring(0, 3).toUpperCase()}</span>
+                    <h3 className="skill-name-dark">{name}</h3>
+                </div>
             </div>
 
-            <div className="skill-level-container">
-                <div className="skill-level-header">
-                    <span className="skill-label">EXPÉRIENCE</span>
-                    <span className="skill-level-percentage">{level}%</span>
+            <div className="skill-level-section">
+                <div className="skill-level-meta">
+                    <span className="skill-label-dark">SYST_LOAD</span>
+                    <span className="skill-percent-dark">{level}%</span>
                 </div>
-                <div className="skill-level-bar">
+                <div className="skill-bar-bg">
                     <div
-                        className="skill-level-progress"
+                        className="skill-bar-fill"
                         style={{ width: `${level}%` }}
                     ></div>
                 </div>
             </div>
 
-            {/* Détails décoratifs Cyberpunk */}
-            <div className="skill-corner-top"></div>
-            <div className="skill-corner-bottom"></div>
+            {/* Décorations visuelles style hardware */}
+            <div className="card-screw tl"></div>
+            <div className="card-screw tr"></div>
+            <div className="card-tech-lines"></div>
         </div>
     );
 };

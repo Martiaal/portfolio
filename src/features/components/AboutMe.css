@@ -38,12 +38,10 @@
     padding: 5px;
     clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 10%);
     border: 2px solid var(--main-bg-color);
-    filter: sepia(100%) hue-rotate(-50deg) saturate(300%) contrast(120%); /* Effet jaune/noir sur l'image */
     transition: all 0.3s ease;
 }
 
 .home-page-about-me-container:hover .home-page-picture {
-    filter: none;
     transform: scale(1.05);
 }
 
