@@ -1,0 +1,95 @@
+.soft-skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 70rem;
+    padding: 20px;
+}
+
+.soft-skill-card {
+    position: relative;
+    background: rgba(252, 238, 10, 0.03); /* Utilisation de third-color très transparente */
+    border-left: 4px solid var(--third-color);
+    padding: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.soft-skill-card:hover {
+    background: rgba(252, 238, 10, 0.1);
+    transform: translateX(10px);
+    border-left: 4px solid var(--secondary-color);
+}
+
+/* Effet de scanner qui passe sur la carte */
+.soft-skill-scanner {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(0, 240, 255, 0.1),
+            transparent
+    );
+    transition: 0.5s;
+}
+
+.soft-skill-card:hover .soft-skill-scanner {
+    left: 100%;
+    transition: 0.8s;
+}
+
+.soft-skill-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.soft-skill-code {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.6rem;
+    color: var(--secondary-color);
+    letter-spacing: 2px;
+}
+
+.soft-skill-label {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--third-color);
+    text-transform: uppercase;
+    margin: 5px 0;
+    font-size: 1.2rem;
+}
+
+.soft-skill-desc {
+    font-size: 0.95rem;
+    color: var(--normal-text);
+    opacity: 0.8;
+    line-height: 1.4;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 10px;
+}
+
+/* Petits carrés de déco en bas à droite */
+.soft-skill-decoration {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    display: flex;
+    gap: 3px;
+}
+
+.soft-skill-decoration span {
+    width: 4px;
+    height: 4px;
+    background: var(--secondary-color);
+    display: block;
+}
+
+.soft-skill-decoration span:nth-child(2) {
+    background: var(--third-color);
+}
