@@ -1,0 +1,177 @@
+.timeline-container {
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    padding: 40px 20px;
+}
+
+/* La ligne centrale (le câble de données) */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, var(--secondary-color), var(--third-color), transparent);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50%;
+    position: relative;
+    margin-bottom: 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Inversion pour le côté droit (University) */
+.timeline-item.university {
+    justify-content: flex-start;
+    padding-right: 0;
+    padding-left: 50%;
+}
+
+.timeline-date {
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.date-text {
+    position: absolute;
+    white-space: nowrap;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    background: var(--main-bg-color);
+    padding: 2px 8px;
+    border: 1px solid var(--secondary-color);
+}
+
+/* Gestion du décalage de la date selon le côté */
+.timeline-item:nth-child(even) .date-text {
+    transform: translateX(-120%);
+}
+
+.timeline-item:nth-child(odd) .date-text {
+    transform: translateX(120%);
+}
+
+.date-dot {
+    width: 12px;
+    height: 12px;
+    background: var(--main-bg-color);
+    border: 2px solid var(--third-color);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--third-color);
+}
+
+/* --- La Carte --- */
+.timeline-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    padding: 20px;
+    width: 80%;
+    position: relative;
+    /* Coupe en bas à droite par défaut */
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 90% 100%, 0 100%);
+    transition: 0.3s;
+}
+
+/* Style spécifique côté gauche (Work / Default) */
+.timeline-item.work .timeline-card {
+    border-left: 4px solid var(--secondary-color);
+}
+
+/* Style spécifique côté droit (University) */
+.timeline-item.university .timeline-card {
+    border-right: 4px solid var(--third-color); /* Bordure à droite */
+    border-left: 1px solid rgba(0, 240, 255, 0.2); /* Reset bordure gauche */
+    /* Coupe en bas à gauche pour le côté droit */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%, 0 85%);
+}
+
+.timeline-card:hover {
+    background: rgba(0, 240, 255, 0.07);
+    transform: scale(1.02);
+}
+
+.card-tag {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.6rem;
+    opacity: 0.5;
+    margin-bottom: 5px;
+}
+
+.card-title {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--normal-text);
+    margin: 0;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.card-subtitle {
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin: 5px 0 0 0;
+}
+
+/* Le petit coin décoratif */
+.card-corner {
+    position: absolute;
+    bottom: 0;
+    width: 15px;
+    height: 15px;
+    background: var(--third-color);
+}
+
+/* Coin à droite pour les cartes de gauche */
+.timeline-item.work .card-corner {
+    right: 0;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+/* Coin à gauche pour les cartes de droite */
+.timeline-item.university .card-corner {
+    left: 0;
+    clip-path: polygon(0 0, 0 100%, 100% 100%);
+}
+
+/* Responsive Mobile */
+@media (max-width: 600px) {
+    .timeline-container::before { left: 20px; }
+    .timeline-item, .timeline-item.university {
+        justify-content: flex-start;
+        padding-left: 45px;
+        padding-right: 0;
+        width: 100%;
+    }
+
+    .timeline-card, .timeline-item.university .timeline-card {
+        width: 100%;
+        /* On remet tout en style "gauche" pour le mobile pour la lisibilité */
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 90% 100%, 0 100%);
+        border-left: 4px solid var(--secondary-color);
+        border-right: 1px solid rgba(0, 240, 255, 0.2);
+    }
+
+    .timeline-item.university .card-corner {
+        left: auto;
+        right: 0;
+        clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    }
+
+    .timeline-date { left: 20px; }
+    .timeline-item:nth-child(even) .date-text,
+    .timeline-item:nth-child(odd) .date-text {
+        transform: translateX(20px);
+    }
+}
