@@ -3,11 +3,10 @@ import "./Skills.css";
 interface SkillCardProps {
     name: string;
     logo: string;
-    description: string;
-    level: number; // de 0 à 100
+    level: number;
 }
 
-export const SkillCard = ({ name, logo, description, level }: SkillCardProps) => {
+export const SkillCard = ({ name, logo, level }: SkillCardProps) => {
     return (
         <div className="skill-module">
             <div className="skill-header">

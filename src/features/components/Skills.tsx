@@ -37,7 +37,6 @@ const SkillSections = ({ subtitle, skills }: SkillSectionProps) => {
                         key={skill.name}
                         name={skill.name}
                         logo={skill.logo}
-                        description={skill.description}
                         level={skill.level}
                     />
                 ))}
