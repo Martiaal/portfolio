@@ -21,24 +21,34 @@ export const SoftSkills = () => {
             </div>
 
             <div className="soft-skills-container">
-                {softSkillsData.map((skill, index) => (
-                    <div key={index} className="soft-skill-card">
-                        <div className="soft-skill-scanner"></div>
-                        <div className="soft-skill-content">
-                            <div className="soft-skill-header">
-                                <span className="soft-skill-code">{skill.code}</span>
-                                <h3 className="soft-skill-label">{skill.label}</h3>
-                            </div>
-                            <p className="soft-skill-desc">{skill.description}</p>
-                        </div>
-                        <div className="soft-skill-decoration">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
+                {softSkillsData.map((skill) => (
+                    <SoftSkillCard skill={skill}/>
                 ))}
             </div>
         </section>
     );
 };
+
+interface SoftSkillCardProps {
+    skill: SoftSkillProps;
+}
+
+export const SoftSkillCard = ( {skill} : SoftSkillCardProps) => {
+    return (
+        <div className="soft-skill-card">
+            <div className="soft-skill-scanner"></div>
+            <div className="soft-skill-content">
+                <div className="soft-skill-header">
+                    <span className="soft-skill-code">{skill.code}</span>
+                    <h3 className="soft-skill-label">{skill.label}</h3>
+                </div>
+                <p className="soft-skill-desc">{skill.description}</p>
+            </div>
+            <div className="soft-skill-decoration">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    )
+}

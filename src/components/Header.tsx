@@ -5,8 +5,9 @@ export const Header = () => {
     return (
         <div className={"header-container"}>
             <HeaderItem content={"À propos de moi"} anchor={"#about"}/>
+            <HeaderItem content={"Mes Compétences"} anchor={"#skills"}/>
+            <HeaderItem content={"Savoir Être"} anchor={"#soft-skills"}/>
             <HeaderItem content={"Mes projets"} anchor={"#projects"}/>
-            <HeaderItem content={"Mes compétences"} anchor={"#skills"}/>
         </div>
     )
 }
