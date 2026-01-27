@@ -10,7 +10,18 @@ export const AboutMe = () => {
                     Martial Carceles <span className={"subtitle"}>Développeur Full Stack</span>
                 </div>
                 <div className={"home-page-about-me-container"}>
-                    <img className={"home-page-picture"} src={picture} alt={"myself"}/>
+                    {/* Colonne Gauche : Image + Bouton */}
+                    <div className={"home-page-left-column"}>
+                        <img className={"home-page-picture"} src={picture} alt={"myself"}/>
+
+                        <a href="/docs/cv.pdf" target="_blank" rel="noreferrer" className="cyber-button">
+                            <span className="cyber-button__text">Download_CV</span>
+                            <span className="cyber-button__glitch"></span>
+                            <span className="cyber-button__tag">R-77</span>
+                        </a>
+                    </div>
+
+                    {/* Colonne Droite : Texte */}
                     <div className={"home-page-about-me-text"}>
                         Je suis Martial Carceles, un étudiant en BUT Informatique. Avec une certaine appétence pour la
                         recherche des meilleurs patterns / architectures pour les applications. Ainsi, j'ai pu développer

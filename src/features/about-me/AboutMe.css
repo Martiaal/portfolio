@@ -1,4 +1,4 @@
-
+/* --- CONTAINER PRINCIPAL --- */
 .home-page-content {
     max-width: 50rem;
 }
@@ -11,12 +11,22 @@
     margin-top: 50px;
     padding: 30px;
 
-    background-color: var(--third-color);
-    color: var(--main-bg-color);
-    clip-path: polygon(4% 0, 100% 0, 100% 70%, 96% 100%, 0 100%, 0 25%);
+    /* Utilisation de tes variables index.css */
+    background-color: var(--third-color); /* Jaune #fcee0a */
+    color: var(--main-bg-color);        /* Noir #000000 */
 
+    clip-path: polygon(4% 0, 100% 0, 100% 70%, 96% 100%, 0 100%, 0 25%);
     position: relative;
-    border-right: 8px solid var(--secondary-color);
+    border-right: 8px solid var(--secondary-color); /* Cyan #00f0ff */
+
+    /* Effet de trame de fond (Scanlines) */
+    background-image: repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.05) 2px,
+            rgba(0, 0, 0, 0.05) 4px
+    );
 }
 
 .home-page-about-me-container::before {
@@ -28,6 +38,15 @@
     font-size: 0.7rem;
     font-weight: 900;
     opacity: 0.6;
+}
+
+/* --- COLONNE GAUCHE (PHOTO + BOUTON) --- */
+.home-page-left-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem; /* Espace entre l'image et le bouton */
+    min-width: 160px;
 }
 
 .home-page-picture {
@@ -45,6 +64,68 @@
     transform: scale(1.05);
 }
 
+/* --- BOUTON CV CYBERPUNK --- */
+.cyber-button {
+    --btn-bg: var(--main-bg-color);
+    --btn-color: var(--secondary-color);
+
+    width: 100%; /* S'aligne sur la largeur de la colonne/image */
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 10px 15px;
+    background: var(--btn-bg);
+    color: var(--btn-color);
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    border: none;
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 85% 100%, 0 100%);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cyber-button:hover {
+    background: var(--secondary-color);
+    color: var(--main-bg-color);
+    transform: translateY(-2px);
+    box-shadow: -5px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.cyber-button__tag {
+    position: absolute;
+    bottom: 2px;
+    right: 12px;
+    font-size: 0.4rem;
+    opacity: 0.7;
+}
+
+.cyber-button__glitch {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--secondary-color);
+    filter: drop-shadow(-4px 0px #fff);
+    z-index: 0;
+}
+
+.cyber-button:hover .cyber-button__glitch {
+    display: block;
+    animation: glitch-anim 0.3s infinite linear alternate-reverse;
+}
+
+.cyber-button__text {
+    position: relative;
+    z-index: 2;
+}
+
+/* --- COLONNE DROITE (TEXTE) --- */
 .home-page-about-me-text {
     font-family: 'Rajdhani', sans-serif;
     font-size: 1.2rem;
@@ -56,12 +137,18 @@
     padding-left: 20px;
 }
 
-.home-page-about-me-container {
-    background-image: repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 2px,
-            rgba(0, 0, 0, 0.05) 2px,
-            rgba(0, 0, 0, 0.05) 4px
-    );
+/* --- ANIMATIONS --- */
+@keyframes glitch-anim {
+    0% { clip-path: inset(10% 0 30% 0); transform: translate(-3px); }
+    33% { clip-path: inset(40% 0 10% 0); transform: translate(3px); }
+    66% { clip-path: inset(70% 0 5% 0); transform: translate(-2px); }
+    100% { clip-path: inset(20% 0 40% 0); transform: translate(0); }
+}
+
+/* Responsivité simple */
+@media (max-width: 600px) {
+    .home-page-about-me-container {
+        flex-direction: column;
+        clip-path: none; /* Simplifie le tracé sur mobile */
+    }
 }
