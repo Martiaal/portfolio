@@ -2,45 +2,55 @@ import { SkillCard } from "./SkillCard";
 import type { SkillsData } from "../types.ts"
 import skillsData from "../datas/skills.json";
 import "./Skills.css";
-
-export const Skills = () => {
-    return (
-        <section id="skills" className="second-container">
-            <div className="main-title" data-text={"Mes compétences"}>
-                Mes compétences
-            </div>
-            {
-                skillsData.map((section: SkillSectionProps) => (
-                    <SkillSections
-                        key={section.subtitle}
-                        subtitle={section.subtitle}
-                        skills={section.skills}
-                    />
-                ))
-            }
-        </section>
-    );
-};
+import {useState} from "react";
 
 interface SkillSectionProps {
     subtitle: string;
     skills: SkillsData[];
 }
 
-const SkillSections = ({ subtitle, skills }: SkillSectionProps) => {
+export const Skills = () => {
+    // On initialise avec la première catégorie du JSON
+    const [activeTab, setActiveTab] = useState(skillsData[0].subtitle);
+
     return (
-        <>
-            <span className={"subtitle"} style={{ marginBottom: "1rem" }}>{subtitle}</span>
-            <div className="skills-grid">
-                {skills.map((skill) => (
-                    <SkillCard
-                        key={skill.name}
-                        name={skill.name}
-                        logo={skill.logo}
-                        level={skill.level}
-                    />
+        <section id="skills" className="second-container">
+            <div className="main-title" data-text={"Mes compétences"}>
+                Mes compétences
+            </div>
+
+            {/* Menu de sélection des catégories */}
+            <div className="skills-nav">
+                {skillsData.map((section: SkillSectionProps) => (
+                    <button
+                        key={section.subtitle}
+                        className={`nav-btn ${activeTab === section.subtitle ? "active" : ""}`}
+                        onClick={() => setActiveTab(section.subtitle)}
+                    >
+                        {section.subtitle}
+                    </button>
                 ))}
             </div>
-        </>
-    )
-}
+
+            {/* Affichage de la section active uniquement */}
+            {skillsData
+                .filter((section: SkillSectionProps) => section.subtitle === activeTab)
+                .map((section: SkillSectionProps) => (
+                    <div key={section.subtitle} className="skills-content">
+                        <div className="skills-grid">
+                            {section.skills.map((skill) => (
+                                <SkillCard
+                                    key={skill.name}
+                                    name={skill.name}
+                                    logo={skill.logo}
+                                    level={skill.level}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                ))
+            }
+        </section>
+    );
+};
+

@@ -1,3 +1,57 @@
+/* Container de la navigation */
+.skills-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+/* Style des boutons/onglets */
+.nav-btn {
+    background: transparent;
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+    font-family: 'Orbitron', sans-serif;
+    padding: 10px 25px;
+    cursor: pointer;
+    text-transform: uppercase;
+    clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
+    transition: all 0.3s ease;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-btn:hover {
+    background: rgba(0, 240, 255, 0.1);
+    box-shadow: 0 0 10px var(--secondary-color);
+}
+
+.nav-btn.active {
+    background: var(--secondary-color);
+    color: var(--main-bg-color);
+    box-shadow: 0 0 20px var(--secondary-color);
+}
+
+/* Animation d'entrée pour le contenu */
+.skills-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Titre de section */
 .section-title-cyber {
     font-family: 'Orbitron', sans-serif;
