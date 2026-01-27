@@ -68,7 +68,6 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    /* Coupe hardware asymétrique */
     clip-path: polygon(0 0, 100% 0, 100% 85%, 92% 100%, 0 100%);
     border-bottom: 6px solid var(--main-bg-color);
     transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
@@ -87,7 +86,8 @@
 }
 
 .skill-icon-wrapper {
-    background: var(--main-bg-color);
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(4px);
     padding: 10px;
     display: flex;
     align-items: center;
@@ -95,12 +95,21 @@
     clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%, 0 20%);
     min-width: 50px;
     min-height: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.skill-module-yellow:hover .skill-icon-wrapper {
+    background: rgba(0, 0, 0, 0.8);
+    border-color: var(--secondary-color);
 }
 
 .skill-icon-dark {
     width: 32px;
     height: 32px;
     object-fit: contain;
+    filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.1));
+    transition: transform 0.3s ease;
 }
 
 .skill-info {
@@ -127,7 +136,7 @@
     line-height: 1;
 }
 
-/* Jauge de progression */
+/* --- JAUGE DE PROGRESSION ANIMÉE --- */
 .skill-level-section {
     margin-top: 10px;
 }
@@ -152,14 +161,16 @@
     font-size: 1rem;
     font-weight: 900;
     color: var(--main-bg-color);
+    animation: text-pulse 2s infinite alternate;
 }
 
 .skill-bar-bg {
     height: 12px;
-    background: rgba(0, 0, 0, 0.15);
+    background: rgba(0, 0, 0, 0.1);
     border: 2px solid var(--main-bg-color);
     padding: 2px;
     position: relative;
+    overflow: hidden;
 }
 
 .skill-bar-fill {
@@ -168,24 +179,74 @@
     position: relative;
     overflow: hidden;
     transition: width 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+    /* Animation de scintillement constant */
+    animation: bar-flicker 4s infinite step-end;
 }
 
-/* Effet de rayures "Danger/Construction" sur la jauge */
+/* Reflet de flux de données (shimmer) */
+.skill-bar-fill::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(252, 238, 10, 0.25),
+            transparent
+    );
+    animation: shimmer 2.5s infinite linear;
+    z-index: 1;
+}
+
+/* Rayures de danger - ANIMATION DE DÉFILEMENT AJOUTÉE */
 .skill-bar-fill::after {
     content: "";
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     background-image: linear-gradient(
             -45deg,
-            rgba(255, 255, 255, 0.3) 25%,
+            rgba(252, 238, 10, 0.3) 25%,
             transparent 25%,
             transparent 50%,
-            rgba(255, 255, 255, 0.3) 50%,
-            rgba(255, 255, 255, 0.3) 75%,
-            transparent 75%,
-            transparent
+            rgba(252, 238, 10, 0.3) 50%,
+            rgba(252, 238, 10, 0.3) 75%,
+            transparent 75%
     );
-    background-size: 10px 10px;
+    background-size: 20px 20px; /* Légèrement agrandi pour un meilleur effet visuel */
+    z-index: 2;
+    animation: progress-move 1s linear infinite; /* Animation de défilement */
+}
+
+/* --- ANIMATIONS --- */
+
+/* Défilement des rayures */
+@keyframes progress-move {
+    0% { background-position: 0 0; }
+    100% { background-position: 20px 0; }
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+@keyframes bar-flicker {
+    0%, 98% { opacity: 1; }
+    99% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+@keyframes text-pulse {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0.7; transform: scale(0.95); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Éléments de décoration Hardware */
@@ -216,26 +277,7 @@
     opacity: 0.15;
 }
 
-/* ANIMATIONS */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* RESPONSIVE */
 @media (max-width: 768px) {
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .nav-btn {
-        padding: 10px 20px;
-        font-size: 0.8rem;
-    }
+    .skills-grid { grid-template-columns: 1fr; }
+    .nav-btn { padding: 10px 20px; font-size: 0.8rem; }
 }
