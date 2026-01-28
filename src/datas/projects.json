@@ -6,30 +6,60 @@
         "name": "Eiffel Time",
         "image": "images/projects/eiffel_time.png",
         "description": "Interface universitaire assurant la gestion des notes / absences / appels / emploi du temps pour les élèves / professeurs / secrétaires et gestionnaires",
-        "tags": ["React", "Django"]
+        "tags": ["Django", "React"]
       },
       {
-        "name": "Eiffel Time",
-        "image": "images/projects/eiffel_time.png",
-        "description": "Interface universitaire assurant la gestion des notes / absences / appels / emploi du temps pour les élèves / professeurs / secrétaires et gestionnaires",
-        "tags": ["React", "Django"]
+        "name": "Harmoneyca",
+        "image": "images/projects/harmoneyca.png",
+        "description": "Interface de gestion bancaire dédiée aux entreprises",
+        "tags": ["CSS", "HTML", "JavaScript", "PHP"]
       },
       {
-        "name": "Eiffel Time",
-        "image": "images/projects/eiffel_time.png",
-        "description": "Interface universitaire assurant la gestion des notes / absences / appels / emploi du temps pour les élèves / professeurs / secrétaires et gestionnaires",
-        "tags": ["React", "Django"]
+        "name": "Project Algiers",
+        "image": "images/projects/algiers.png",
+        "description": "Site internet visant à promouvoir l'histoire et la culture algéroise, en partenariat avec l'UNESCO",
+        "tags": ["CSS", "HTML", "JavaScript", "PHP"]
+      },
+      {
+        "name": "Speedy Wiki",
+        "image": "images/projects/speedywiki.png",
+        "description": "Site permettant de jouer avec des amis au jeu de Wikipédia (Aller d'une page à une autre le plus rapidement possible)",
+        "tags": ["MongoDB","NodeJS", "Python", "React"]
+      },
+      {
+        "name": "Swiftrail",
+        "image": "images/projects/swiftrail.png",
+        "description": "Site permettant aux particuliers de consulter et acheter des billets de train pour voyager en France",
+        "tags": ["MongoDB","NodeJS", "React"]
+      },
+      {
+        "name": "Travia",
+        "image": "images/projects/travia.png",
+        "description": "Site simulant des voyages intra-galactiques dans l'univers de Star Wars",
+        "tags": ["CSS", "HTML", "JavaScript", "PHP"]
       }
     ]
   },
   {
-    "category": "Mobile",
+    "category": "Jeux Vidéo",
     "items": [
       {
-        "name": "Eiffel Time",
-        "image": "images/projects/eiffel_time.png",
-        "description": "Interface universitaire assurant la gestion des notes / absences / appels / emploi du temps pour les élèves / professeurs / secrétaires et gestionnaires",
-        "tags": ["React", "Django"]
+        "name": "Codex Naturalis",
+        "image": "images/projects/codex.png",
+        "description": "Portage du jeu de société \"Codex Naturalis\" avec le langage Java",
+        "tags": ["Java"]
+      },
+      {
+        "name": "Qix",
+        "image": "images/projects/qix.png",
+        "description": "Refonte du jeu d'arcade Qix, avec le langage python",
+        "tags": ["Python"]
+      },
+      {
+        "name": "Shooter Game",
+        "image": "images/projects/shooter.png",
+        "description": "Jeu de tir développé avec le langage python",
+        "tags": ["Python"]
       }
     ]
   }
