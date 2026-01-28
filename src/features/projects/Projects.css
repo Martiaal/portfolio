@@ -23,7 +23,7 @@
 
 .project-card:hover {
     transform: translateY(-10px) rotate(1deg);
-    box-shadow: 10px 10px 0px var(--secondary-color);
+    box-shadow: 10px 10px 0 var(--secondary-color);
 }
 
 .project-image-container {

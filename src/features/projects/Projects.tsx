@@ -1,10 +1,14 @@
 import { useState } from "react";
 import { ProjectCard } from "./ProjectCard.tsx";
-import projectsData from "../../datas/projects.json";
 import "./Projects.css";
+import type { ProjectsCategories } from "../../types/types.ts";
 
-export const Projects = () => {
-    const [activeTab, setActiveTab] = useState(projectsData[0].category);
+interface ProjectsProps {
+    projects: ProjectsCategories[];
+}
+
+export const Projects = ({ projects }: ProjectsProps) => {
+    const [activeTab, setActiveTab] = useState(projects[0].category);
 
     return (
         <section id="projects" className="second-container" style={{ marginTop: "100px" }}>
@@ -12,8 +16,8 @@ export const Projects = () => {
                 Mes Projets
             </div>
 
-            <div className="skills-nav"> {/* Réutilisation de la classe des onglets Skills */}
-                {projectsData.map((group) => (
+            <div className="skills-nav">
+                {projects.map((group) => (
                     <button
                         key={group.category}
                         className={`nav-btn ${activeTab === group.category ? "active" : ""}`}
@@ -25,7 +29,7 @@ export const Projects = () => {
             </div>
 
             <div className="projects-grid">
-                {projectsData
+                {projects
                     .find(group => group.category === activeTab)
                     ?.items.map((project, index) => (
                         <ProjectCard key={index} {...project} />

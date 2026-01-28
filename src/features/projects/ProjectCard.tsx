@@ -1,13 +1,7 @@
 import "./Projects.css";
+import type {Project} from "../../types/types.ts";
 
-interface ProjectCardProps {
-    name: string;
-    image: string;
-    description: string;
-    tags: string[];
-}
-
-export const ProjectCard = ({ name, image, description, tags }: ProjectCardProps) => {
+export const ProjectCard = ({ name, image, description, tags }: Project) => {
     return (
         <div className="project-card">
             <div className="project-image-container">

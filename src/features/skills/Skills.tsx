@@ -1,17 +1,15 @@
+import { useState } from "react";
 import { SkillCard } from "./SkillCard.tsx";
-import type { SkillsData } from "../../types/types.ts"
-import skillsData from "../../datas/skills.json";
 import "./Skills.css";
-import {useState} from "react";
+import type {SkillTitles} from "../../types/types.ts"
 
-interface SkillSectionProps {
-    subtitle: string;
-    skills: SkillsData[];
+interface SkillsProps {
+    skills: SkillTitles[];
 }
 
-export const Skills = () => {
+export const Skills = ({ skills }: SkillsProps) => {
     // On initialise avec la première catégorie du JSON
-    const [activeTab, setActiveTab] = useState(skillsData[0].subtitle);
+    const [activeTab, setActiveTab] = useState(skills[0].subtitle);
 
     return (
         <section id="skills" className="second-container">
@@ -21,7 +19,7 @@ export const Skills = () => {
 
             {/* Menu de sélection des catégories */}
             <div className="skills-nav">
-                {skillsData.map((section: SkillSectionProps) => (
+                {skills.map((section: SkillTitles) => (
                     <button
                         key={section.subtitle}
                         className={`nav-btn ${activeTab === section.subtitle ? "active" : ""}`}
@@ -33,9 +31,9 @@ export const Skills = () => {
             </div>
 
             {/* Affichage de la section active uniquement */}
-            {skillsData
-                .filter((section: SkillSectionProps) => section.subtitle === activeTab)
-                .map((section: SkillSectionProps) => (
+            {skills
+                .filter((section: SkillTitles) => section.subtitle === activeTab)
+                .map((section: SkillTitles) => (
                     <div key={section.subtitle} className="skills-content">
                         <div className="skills-grid">
                             {section.skills.map((skill) => (

@@ -92,7 +92,7 @@
     background: var(--secondary-color);
     color: var(--main-bg-color);
     transform: translateY(-2px);
-    box-shadow: -5px 5px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: -5px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 .cyber-button__tag {

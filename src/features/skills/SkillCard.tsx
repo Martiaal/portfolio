@@ -21,7 +21,7 @@ export const SkillCard = ({ name, logo, level }: SkillCardProps) => {
 
             <div className="skill-level-section">
                 <div className="skill-level-meta">
-                    <span className="skill-label-dark">SYST_LOAD</span>
+                    <span className="skill-label-dark">Expérience</span>
                     <span className="skill-percent-dark">{level}%</span>
                 </div>
                 <div className="skill-bar-bg">
