@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./ButSkills.css";
+import {MainTitle} from "../../components/MainTitle.tsx";
 
 interface SubSkill {
     label: string;
@@ -92,9 +93,7 @@ export const ButSkills = () => {
 
     return (
         <section id="but-skills" className="second-container" style={{ marginTop: "100px" }}>
-            <div className="main-title" data-text={"Compétences BUT"}>
-                Compétences BUT
-            </div>
+            <MainTitle title={"Compétences BUT"}/>
 
             <div className="skills-nav">
                 {butData.map((skill) => (

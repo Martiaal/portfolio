@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ProjectCard } from "./ProjectCard.tsx";
 import "./Projects.css";
 import type { ProjectsCategories } from "../../types/types.ts";
+import {MainTitle} from "../../components/MainTitle.tsx";
 
 interface ProjectsProps {
     projects: ProjectsCategories[];
@@ -12,9 +13,7 @@ export const Projects = ({ projects }: ProjectsProps) => {
 
     return (
         <section id="projects" className="second-container" style={{ marginTop: "100px" }}>
-            <div className="main-title" data-text={"Mes Projets"}>
-                Mes Projets
-            </div>
+            <MainTitle title={"Mes Projets"}/>
 
             <div className="skills-nav">
                 {projects.map((group) => (

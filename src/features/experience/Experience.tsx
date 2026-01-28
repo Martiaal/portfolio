@@ -1,4 +1,5 @@
 import "./Experience.css";
+import {MainTitle} from "../../components/MainTitle.tsx";
 
 interface ExpItem {
     year: string;
@@ -16,9 +17,7 @@ const experiences: ExpItem[] = [
 export const Experience = () => {
     return (
         <section id="experience" className="second-container" style={{ marginTop: "100px" }}>
-            <div className="main-title" data-text={"Parcours"}>
-                Parcours
-            </div>
+            <MainTitle title={"Mon Parcours"}/>
 
             <div className="timeline-container">
                 {experiences.map((exp) => (

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { SkillCard } from "./SkillCard.tsx";
 import "./Skills.css";
 import type {SkillTitles} from "../../types/types.ts"
+import {MainTitle} from "../../components/MainTitle.tsx";
 
 interface SkillsProps {
     skills: SkillTitles[];
@@ -13,9 +14,7 @@ export const Skills = ({ skills }: SkillsProps) => {
 
     return (
         <section id="skills" className="second-container">
-            <div className="main-title" data-text={"Mes compétences"}>
-                Mes compétences
-            </div>
+            <MainTitle title={"Mes compétences"}/>
 
             {/* Menu de sélection des catégories */}
             <div className="skills-nav">

@@ -1,4 +1,5 @@
 import "./SoftSkills.css";
+import {MainTitle} from "../../components/MainTitle.tsx";
 
 interface SoftSkillProps {
     label: string;
@@ -16,9 +17,7 @@ const softSkillsData: SoftSkillProps[] = [
 export const SoftSkills = () => {
     return (
         <section id="soft-skills" className="second-container" style={{ marginTop: "100px" }}>
-            <div className="main-title" data-text={"Savoir Être"}>
-                Savoir Être
-            </div>
+            <MainTitle title={"Savoir être"}/>
 
             <div className="soft-skills-container">
                 {softSkillsData.map((skill) => (

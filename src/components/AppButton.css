@@ -1,0 +1,81 @@
+.cyber-button {
+    --btn-bg: var(--main-bg-color);
+    --btn-color: var(--secondary-color);
+    --glitch-color: var(--third-color);
+
+    width: 100%;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 12px 20px;
+    background: var(--btn-bg);
+    color: var(--btn-color);
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    border: 1px solid var(--secondary-color); /* Bordure fine pour le côté tech */
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 88% 100%, 0 100%);
+    cursor: pointer;
+    transition: all 0.1s ease; /* Transition très rapide pour le côté nerveux */
+    outline: none;
+}
+
+/* L'effet au survol */
+.cyber-button:hover {
+    background: var(--btn-color); /* Le bleu devient le fond */
+    color: var(--main-bg-color);
+    box-shadow: 0px 0px 15px var(--secondary-color); /* Glow néon */
+    transform: translateX(2px); /* Petit décalage nerveux */
+}
+
+/* On utilise le pseudo-élément ::after pour l'effet de glitch de couleur */
+.cyber-button::after {
+    content: "DOWNLOAD_CV"; /* Doit matcher ton label ou être géré via JS */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--glitch-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.05s;
+}
+
+.cyber-button:hover::after {
+    animation: glitch-flash 0.4s steps(2, end) forwards;
+}
+
+/* Animation de flash agressif */
+@keyframes glitch-flash {
+    0% { opacity: 0; clip-path: inset(80% 0 0 0); transform: translate(-5px); }
+    10% { opacity: 1; clip-path: inset(10% 0 40% 0); transform: translate(5px); }
+    20% { opacity: 0; }
+    30% { opacity: 1; clip-path: inset(50% 0 10% 0); transform: translate(-5px); }
+    40% { opacity: 0; }
+    50% { opacity: 1; clip-path: inset(0 0 70% 0); transform: translate(2px); }
+    60% { opacity: 0; }
+}
+
+/* Amélioration du petit Tag en bas à droite */
+.cyber-button__tag {
+    position: absolute;
+    bottom: 2px;
+    right: 12px;
+    font-size: 0.5rem;
+    color: var(--secondary-color);
+    background: var(--main-bg-color);
+    padding: 0 4px;
+    z-index: 3;
+}
+
+.cyber-button:hover .cyber-button__tag {
+    color: var(--main-bg-color);
+    background: var(--third-color);
+}

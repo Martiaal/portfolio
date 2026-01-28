@@ -64,67 +64,6 @@
     transform: scale(1.05);
 }
 
-/* --- BOUTON CV CYBERPUNK --- */
-.cyber-button {
-    --btn-bg: var(--main-bg-color);
-    --btn-color: var(--secondary-color);
-
-    width: 100%; /* S'aligne sur la largeur de la colonne/image */
-    box-sizing: border-box;
-    display: inline-block;
-    padding: 10px 15px;
-    background: var(--btn-bg);
-    color: var(--btn-color);
-    text-decoration: none;
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
-    font-size: 0.75rem;
-    text-align: center;
-    text-transform: uppercase;
-    position: relative;
-    border: none;
-    clip-path: polygon(0 0, 100% 0, 100% 70%, 85% 100%, 0 100%);
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.cyber-button:hover {
-    background: var(--secondary-color);
-    color: var(--main-bg-color);
-    transform: translateY(-2px);
-    box-shadow: -5px 5px 0 rgba(0, 0, 0, 0.2);
-}
-
-.cyber-button__tag {
-    position: absolute;
-    bottom: 2px;
-    right: 12px;
-    font-size: 0.4rem;
-    opacity: 0.7;
-}
-
-.cyber-button__glitch {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--secondary-color);
-    filter: drop-shadow(-4px 0px #fff);
-    z-index: 0;
-}
-
-.cyber-button:hover .cyber-button__glitch {
-    display: block;
-    animation: glitch-anim 0.3s infinite linear alternate-reverse;
-}
-
-.cyber-button__text {
-    position: relative;
-    z-index: 2;
-}
-
 /* --- COLONNE DROITE (TEXTE) --- */
 .home-page-about-me-text {
     font-family: 'Rajdhani', sans-serif;
@@ -135,14 +74,6 @@
     position: relative;
     border-left: 10px solid var(--main-bg-color);
     padding-left: 20px;
-}
-
-/* --- ANIMATIONS --- */
-@keyframes glitch-anim {
-    0% { clip-path: inset(10% 0 30% 0); transform: translate(-3px); }
-    33% { clip-path: inset(40% 0 10% 0); transform: translate(3px); }
-    66% { clip-path: inset(70% 0 5% 0); transform: translate(-2px); }
-    100% { clip-path: inset(20% 0 40% 0); transform: translate(0); }
 }
 
 /* Responsivité simple */
