@@ -20,7 +20,7 @@ export const HomePage = () => {
     return (
         <>
             <AboutMe/>
-            <Skills skills={skills}/>
+            <Skills skills={skills} projects={projects}/>
             <SoftSkills softSkills={softSkills}/>
             <Projects projects={projects}/>
             <Experience experiences={experiences}/>

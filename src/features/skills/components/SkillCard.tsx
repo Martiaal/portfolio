@@ -4,11 +4,12 @@ interface SkillCardProps {
     name: string;
     logo: string;
     level: number;
+    onClick: () => void;
 }
 
-export const SkillCard = ({ name, logo, level }: SkillCardProps) => {
+export const SkillCard = ({ name, logo, level, onClick }: SkillCardProps) => {
     return (
-        <div className="skill-module-yellow">
+        <div className="skill-module-yellow" onClick={onClick}>
             <div className="skill-card-top">
                 <div className="skill-icon-wrapper">
                     <img src={logo} alt={name} className="skill-icon-dark" />
