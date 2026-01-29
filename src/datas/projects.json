@@ -6,37 +6,37 @@
         "name": "Eiffel Time",
         "image": "images/projects/eiffel_time.png",
         "description": "Interface universitaire assurant la gestion des notes / absences / appels / emploi du temps pour les élèves / professeurs / secrétaires et gestionnaires",
-        "tags": ["Django", "React"]
+        "tags": ["Django", "Postgre SQL", "React", "TypeScript"]
       },
       {
         "name": "Harmoneyca",
         "image": "images/projects/harmoneyca.png",
         "description": "Interface de gestion bancaire dédiée aux entreprises",
-        "tags": ["CSS", "HTML", "JavaScript", "PHP"]
+        "tags": ["CSS", "HTML", "JavaScript", "MySQL", "PHP"]
       },
       {
         "name": "Project Algiers",
         "image": "images/projects/algiers.png",
         "description": "Site internet visant à promouvoir l'histoire et la culture algéroise, en partenariat avec l'UNESCO",
-        "tags": ["CSS", "HTML", "JavaScript", "PHP"]
+        "tags": ["CSS", "HTML", "MySQL", "PHP"]
       },
       {
         "name": "Speedy Wiki",
         "image": "images/projects/speedywiki.png",
         "description": "Site permettant de jouer avec des amis au jeu de Wikipédia (Aller d'une page à une autre le plus rapidement possible)",
-        "tags": ["MongoDB","NodeJS", "Python", "React"]
+        "tags": ["MongoDB", "NodeJS", "Python", "React", "TypeScript"]
       },
       {
         "name": "Swiftrail",
         "image": "images/projects/swiftrail.png",
         "description": "Site permettant aux particuliers de consulter et acheter des billets de train pour voyager en France",
-        "tags": ["MongoDB","NodeJS", "React"]
+        "tags": ["MongoDB", "NodeJS", "React", "TypeScript"]
       },
       {
         "name": "Travia",
         "image": "images/projects/travia.png",
         "description": "Site simulant des voyages intra-galactiques dans l'univers de Star Wars",
-        "tags": ["CSS", "HTML", "JavaScript", "PHP"]
+        "tags": ["CSS", "HTML", "JavaScript", "MySQL", "PHP"]
       }
     ]
   },

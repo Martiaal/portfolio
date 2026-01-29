@@ -18,14 +18,14 @@ export const AboutMe = () => {
                     <div className={"home-page-left-column"}>
                         <img className={"home-page-picture"} src={picture} alt={"myself"}/>
 
-                        <AppButton label={"DOWNLOAD_CV"} onClick={OpenCV} tag={"R-77"}/>
+                        <AppButton label={"DOWNLOAD_CV"} onClick={OpenCV}/>
                     </div>
 
                     {/* Right column : description */}
                     <div className={"home-page-about-me-text"}>
-                        Je suis Martial Carceles, un étudiant en BUT Informatique. Avec une certaine appétence pour la
-                        recherche des meilleurs patterns / architectures pour les applications. Ainsi, j'ai pu développer
-                        mes compétences de développeur Full-Stack au cours des trois dernières années.
+                        Je suis Martial Carceles, étudiant en BUT Informatique. Mon appétence pour le développement
+                        d'applications me pousse à rechercher une alternance pour mes trois prochaines années, que je
+                        compte réaliser au sein d'une école d'ingénieur.
                     </div>
                 </div>
             </div>

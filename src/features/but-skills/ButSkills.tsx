@@ -26,18 +26,18 @@ const butData: ButSkill[] = [
         subSkills: [
             {
                 label: "Choisir et implémenter les architectures adaptés",
-                justification: "Sélection d'une architecture Micro-frontends pour permettre un déploiement indépendant des modules.",
-                project: "Neon Dashboard"
+                justification: "Choix d'architecture monorepo pour allier de manière la plus simple possible web et mobile",
+                project: "Eiffel Time"
             },
             {
                 label: "Faire évoluer une application existante",
-                justification: "Refactorisation complète d'une API legacy vers Node.js pour améliorer la maintenabilité.",
-                project: "Cyber-Shop Update"
+                justification: "Refactorisation complète du backend d'une ancienne application vers une nouvelle technologie, améliorant la maintenabilité du projet",
+                project: "Eiffel Time"
             },
             {
                 label: "Intégrer des solutions dans un environnement de production",
-                justification: "Mise en place d'un pipeline CI/CD via GitHub Actions pour automatiser les déploiements.",
-                project: "Cloud-Sync Engine"
+                justification: "Mise en place d'un pipeline Jenkins via github, assurant un déploiement automatique",
+                project: "Pipeline Jenkins"
             }
         ]
     },
@@ -49,18 +49,18 @@ const butData: ButSkill[] = [
         subSkills: [
             {
                 label: "Anticiper les résultats de diverses métriques",
-                justification: "Simulation de montée en charge (Load Testing) pour garantir la stabilité sous 10k requêtes/sec.",
-                project: "Scale-Test Tool"
+                justification: "Utilisation de méthodes python consommant une quantité négligeable de mémoire",
+                project: "Qix"
             },
             {
                 label: "Profiler, analyser et justifier le comportement d’un code",
-                justification: "Utilisation de Chrome DevTools pour identifier et corriger des fuites mémoires critiques.",
-                project: "Memory-Guard"
+                justification: "Profilage de la consommation mémoire et temporelle des différentes composantes du programme",
+                project: "Qix"
             },
             {
                 label: "Choisir et utiliser des bibliothèques dédiées",
-                justification: "Implémentation de WebWorkers pour déporter les calculs lourds de l'IA hors du thread principal.",
-                project: "Neural-Process"
+                justification: "Utilisation des bibliothèques de pagination, permettant de réduire considérablement la taille des requêtes aux API",
+                project: "Eiffel Time"
             }
         ]
     },
@@ -72,25 +72,25 @@ const butData: ButSkill[] = [
         subSkills: [
             {
                 label: "Organiser et partager une veille technologique",
-                justification: "Mise en place d'un système de KB (Knowledge Base) partagé sur Notion pour l'équipe.",
-                project: "Tech-Wiki"
+                justification: "Réunions avec l'équipe backend pour choisir la technologie la plus adaptée à notre besoin",
+                project: "Eiffel Time"
             },
             {
                 label: "Guider la conduite du changement informatique",
-                justification: "Animation de workshops pour former les collaborateurs au passage de SVN vers Git.",
-                project: "Workflow Migration"
+                justification: "Mise à jour des technologies utilisées en backend (de prisma/NodeJs vers Django)",
+                project: "Eiffel Time"
             },
             {
                 label: "Accompagner le management de projet informatique",
-                justification: "Utilisation de la méthode Scrum en tant que Scrum Master pour fluidifier les sprints.",
-                project: "Agile-Sync"
+                justification: "Utilisation de la méthode scrum afin d'implémenter les fonctionnalités rapidement et de manière fluide",
+                project: "Eiffel Time"
             }
         ]
     }
 ];
 
 export const ButSkills = () => {
-    const [activeTab, setActiveTab] = useState(butData[0].id);
+    const [activeTab, setActiveTab] = useState(butData[0].title);
 
     return (
         <section id="but-skills" className="second-container" style={{ marginTop: "100px" }}>
@@ -124,9 +124,9 @@ export const ButSkills = () => {
                                     <div className="subskill-justification">
                                         <p>{sub.justification}</p>
                                     </div>
-                                    {/*<div className="subskill-project-link">*/}
-                                    {/*    SOURCE: <span className="project-name">{sub.project}</span>*/}
-                                    {/*</div>*/}
+                                    <div className="subskill-project-link">
+                                        SOURCE: <span className="project-name">{sub.project}</span>
+                                    </div>
                                 </div>
                             ))}
                         </div>

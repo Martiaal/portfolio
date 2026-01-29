@@ -1,22 +1,22 @@
 [
   {
     "label": "Adaptabilité",
-    "description": "Capacité à pivoter rapidement face aux changements de stack ou d'environnement.",
+    "description": "Capacité d'adaptation à de nouveaux environnements de travail, expérimenté lors de mes expériences professionnelles",
     "code": "ADPT_01"
   },
   {
     "label": "Esprit d'équipe",
-    "description": "Synchronisation optimale avec les membres de l'escouade via Git et communication active.",
+    "description": "Nombreux projets réalisés en groupe de 3 à 6, dont certains en tant que chef de projet",
     "code": "TEAM_02"
   },
   {
     "label": "Autonomie",
-    "description": "Résolution de problèmes complexes en isolation sans compromettre l'intégrité du projet.",
+    "description": "Résolution de problèmes complexes en isolation sans compromettre l'intégrité du projet",
     "code": "SELF_03"
   },
   {
     "label": "Curiosité",
-    "description": "Veille constante sur les technologies émergentes et le deep-web du développement.",
+    "description": "Exploration de nouvelles technologies, à comparer avec mes connaissances en fonction de nombreux critères",
     "code": "SCAN_04"
   }
 ]

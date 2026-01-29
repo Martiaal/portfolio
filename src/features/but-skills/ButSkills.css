@@ -78,9 +78,12 @@
     transition: all 0.3s ease;
 }
 
-.subskill-module:hover {
-    background: rgba(0, 0, 0, 0.08);
-    transform: translateY(-5px);
+/* Petit effet de "bracket" ou d'angle au survol du module parent */
+.subskill-module:hover .project-name {
+    background: var(--main-bg-color);
+    color: var(--secondary-color); /* Le bleu cyan ressort sur le noir au hover */
+    border-color: var(--secondary-color);
+    box-shadow: 3px 3px 0px var(--secondary-color);
 }
 
 .subskill-label-container {
@@ -116,9 +119,22 @@
 }
 
 .project-name {
+    color: var(--main-bg-color); /* Texte sombre sur fond transparent ou borduré */
+    background: transparent; /* On enlève le fond massif */
+    padding: 2px 8px;
+    border: 1px solid var(--main-bg-color); /* Une fine bordure pour le style hardware */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    font-size: 0.75rem; /* Légèrement plus grand que "SOURCE" mais reste petit */
+    transition: all 0.2s ease;
+}
+
+.project-name::before {
+    content: ">";
+    margin-right: 5px;
     color: var(--secondary-color);
-    background: var(--main-bg-color);
-    padding: 2px 6px;
+    font-weight: 900;
 }
 
 /* Animations */
@@ -134,4 +150,16 @@
 @media (max-width: 768px) {
     .but-main-title { font-size: 1.8rem; flex-direction: column; align-items: flex-start; }
     .but-card { padding: 20px; }
+}
+
+.subskill-project-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.65rem; /* Réduction de la taille globale */
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.5); /* Couleur plus discrète pour le label SOURCE */
+    margin-top: auto; /* Pousse le lien en bas du module */
+    padding-top: 10px;
 }
