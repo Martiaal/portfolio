@@ -6,7 +6,7 @@ import {AppButton} from "../../components/AppButton.tsx";
 
 export const AboutMe = () => {
     const OpenCV = () => {
-        window.open("/docs/cv.pdf", "_blank", "noreferrer");
+        window.open("/portfolio/docs/cv.pdf", "_blank", "noreferrer");
     }
 
     return (
