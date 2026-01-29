@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./ButSkills.css";
 import {MainTitle} from "../../components/MainTitle.tsx";
+import {TabsNav} from "../../components/TabsNav.tsx";
 
 interface SubSkill {
     label: string;
@@ -95,20 +96,14 @@ export const ButSkills = () => {
         <section id="but-skills" className="second-container" style={{ marginTop: "100px" }}>
             <MainTitle title={"Compétences BUT"}/>
 
-            <div className="skills-nav">
-                {butData.map((skill) => (
-                    <button
-                        key={skill.id}
-                        className={`nav-btn ${activeTab === skill.id ? "active" : ""}`}
-                        onClick={() => setActiveTab(skill.id)}
-                    >
-                        {skill.title}
-                    </button>
-                ))}
-            </div>
+            <TabsNav
+                tabs={butData.map(s => s.title)}
+                activeTab={activeTab}
+                onChange={setActiveTab}
+            />
 
             <div className="but-container">
-                {butData.filter(s => s.id === activeTab).map(skill => (
+                {butData.filter(s => s.title === activeTab).map(skill => (
                     <div key={skill.id} className="but-card animate-fadeIn">
                         <div className="but-card-header">
                             <div className="but-header-top">

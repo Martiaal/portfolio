@@ -3,6 +3,7 @@ import { ProjectCard } from "./ProjectCard.tsx";
 import "./Projects.css";
 import type { ProjectsCategories } from "../../types/types.ts";
 import {MainTitle} from "../../components/MainTitle.tsx";
+import {TabsNav} from "../../components/TabsNav.tsx";
 
 interface ProjectsProps {
     projects: ProjectsCategories[];
@@ -15,17 +16,11 @@ export const Projects = ({ projects }: ProjectsProps) => {
         <section id="projects" className="second-container" style={{ marginTop: "100px" }}>
             <MainTitle title={"Mes Projets"}/>
 
-            <div className="skills-nav">
-                {projects.map((group) => (
-                    <button
-                        key={group.category}
-                        className={`nav-btn ${activeTab === group.category ? "active" : ""}`}
-                        onClick={() => setActiveTab(group.category)}
-                    >
-                        {group.category}
-                    </button>
-                ))}
-            </div>
+            <TabsNav
+                tabs={projects.map(p => p.category)}
+                activeTab={activeTab}
+                onChange={setActiveTab}
+            />
 
             <div className="projects-grid">
                 {projects

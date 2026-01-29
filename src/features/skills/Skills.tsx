@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { SkillCard } from "./SkillCard.tsx";
-import "./Skills.css";
-import type {SkillTitles} from "../../types/types.ts"
 import {MainTitle} from "../../components/MainTitle.tsx";
+import {TabsNav} from "../../components/TabsNav.tsx";
+import {SkillSection} from "./components/SkillSection.tsx";
+import type {SkillTitles} from "../../types/types.ts"
+import "./Skills.css";
 
 interface SkillsProps {
     skills: SkillTitles[];
@@ -16,35 +17,17 @@ export const Skills = ({ skills }: SkillsProps) => {
         <section id="skills" className="second-container">
             <MainTitle title={"Mes compétences"}/>
 
-            {/* Menu de sélection des catégories */}
-            <div className="skills-nav">
-                {skills.map((section: SkillTitles) => (
-                    <button
-                        key={section.subtitle}
-                        className={`nav-btn ${activeTab === section.subtitle ? "active" : ""}`}
-                        onClick={() => setActiveTab(section.subtitle)}
-                    >
-                        {section.subtitle}
-                    </button>
-                ))}
-            </div>
+            <TabsNav
+                tabs={skills.map(s => s.subtitle)}
+                activeTab={activeTab}
+                onChange={setActiveTab}
+            />
 
             {/* Affichage de la section active uniquement */}
             {skills
                 .filter((section: SkillTitles) => section.subtitle === activeTab)
                 .map((section: SkillTitles) => (
-                    <div key={section.subtitle} className="skills-content">
-                        <div className="skills-grid">
-                            {section.skills.map((skill) => (
-                                <SkillCard
-                                    key={skill.name}
-                                    name={skill.name}
-                                    logo={skill.logo}
-                                    level={skill.level}
-                                />
-                            ))}
-                        </div>
-                    </div>
+                    <SkillSection section={section}/>
                 ))
             }
         </section>

@@ -1,4 +1,4 @@
-import "./Skills.css";
+import "../Skills.css";
 
 interface SkillCardProps {
     name: string;

@@ -25,10 +25,6 @@ a {
 body {
   margin: 0;
   padding-bottom: 10rem;
-  /* Superposition de 3 effets :
-     1. Un dégradé radial pour éclairer un peu le centre
-     2. Une grille cybernétique
-     3. Un effet de scanlines (lignes de vieux moniteur) */
   background-image:
           radial-gradient(circle at center, #1a1a1a 0%, #080808 100%),
           linear-gradient(var(--bg-grid-color) 1px, transparent 1px),

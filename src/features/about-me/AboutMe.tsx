@@ -14,14 +14,14 @@ export const AboutMe = () => {
             <div className={"home-page-content"}>
                 <MainTitle title={"Martial Carceles"} subtitle={"Développeur full-stack"}/>
                 <div className={"home-page-about-me-container"}>
-                    {/* Colonne Gauche : Image + Bouton */}
+                    {/* Left column : image and picture */}
                     <div className={"home-page-left-column"}>
                         <img className={"home-page-picture"} src={picture} alt={"myself"}/>
 
                         <AppButton label={"DOWNLOAD_CV"} onClick={OpenCV} tag={"R-77"}/>
                     </div>
 
-                    {/* Colonne Droite : Texte */}
+                    {/* Right column : description */}
                     <div className={"home-page-about-me-text"}>
                         Je suis Martial Carceles, un étudiant en BUT Informatique. Avec une certaine appétence pour la
                         recherche des meilleurs patterns / architectures pour les applications. Ainsi, j'ai pu développer

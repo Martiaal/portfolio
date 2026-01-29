@@ -1,20 +1,13 @@
 import "./Experience.css";
-import {MainTitle} from "../../components/MainTitle.tsx";
+import { MainTitle } from "../../components/MainTitle.tsx";
+import { ExperienceCard } from "./components/ExperienceCard.tsx";
+import type { ExpItem } from "../../types/types.ts";
 
-interface ExpItem {
-    year: string;
-    title: string; // Nom de l'école ou de l'entreprise
-    subtitle: string; // Spécialité ou Poste
-    type: "university" | "work";
+interface ExperienceProps {
+    experiences: ExpItem[];
 }
 
-const experiences: ExpItem[] = [
-    { year: "2025 (3 mois)", title: "Stage chez CEICOM Solutions", subtitle: "Développeur C++", type: "work" },
-    { year: "2023-2026", title: "IUT de Marne-la-Vallée", subtitle: "BUT Informatique", type: "university" },
-    { year: "juin 2023", title: "Stage chez Orange", subtitle: "Développeur python", type: "work" },
-];
-
-export const Experience = () => {
+export const Experience = ({ experiences }: ExperienceProps) => {
     return (
         <section id="experience" className="second-container" style={{ marginTop: "100px" }}>
             <MainTitle title={"Mon Parcours"}/>
@@ -27,25 +20,3 @@ export const Experience = () => {
         </section>
     );
 };
-
-interface ExperienceCardProps {
-    exp: ExpItem;
-}
-
-export const ExperienceCard = ({exp}: ExperienceCardProps) => {
-    return (
-        <div className={`timeline-item ${exp.type}`}>
-            <div className="timeline-date">
-                <span className="date-text">{exp.year}</span>
-                <div className="date-dot"></div>
-            </div>
-
-            <div className="timeline-card">
-                <div className="card-tag">{exp.type === "work" ? "CORP_LOG" : "EDU_LOG"}</div>
-                <h3 className="card-title">{exp.title}</h3>
-                <p className="card-subtitle">{exp.subtitle}</p>
-                <div className="card-corner"></div>
-            </div>
-        </div>
-    )
-}
