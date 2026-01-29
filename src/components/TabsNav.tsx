@@ -1,3 +1,4 @@
+import "./TabsNav.css";
 
 interface TabsNavProps<T extends string> {
     tabs: T[];
@@ -7,7 +8,7 @@ interface TabsNavProps<T extends string> {
 }
 
 export const TabsNav = <T extends string>(
-    { tabs, activeTab, onChange, className = "skills-nav" }: TabsNavProps<T>) => {
+    { tabs, activeTab, onChange, className = "tabs-nav" }: TabsNavProps<T>) => {
     return (
         <div className={className}>
             {tabs.map((tab) => (
