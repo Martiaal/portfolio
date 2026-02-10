@@ -5,18 +5,23 @@
     "code": "ADPT_01"
   },
   {
-    "label": "Esprit d'équipe",
-    "description": "Nombreux projets réalisés en groupe de 3 à 6, dont certains en tant que chef de projet",
-    "code": "TEAM_02"
+    "label": "Autonomie",
+    "description": "Résolution de problèmes complexes en autonomie sans compromettre l'intégrité du projet",
+    "code": "SELF_03"
   },
   {
-    "label": "Autonomie",
-    "description": "Résolution de problèmes complexes en isolation sans compromettre l'intégrité du projet",
-    "code": "SELF_03"
+    "label": "Communication",
+    "description": "Présentations en amphithéâtre, devant des jurys pour présenter des projets, et un public pour présenter ma formation",
+    "code": "SCAN_04"
   },
   {
     "label": "Curiosité",
     "description": "Exploration de nouvelles technologies, à comparer avec mes connaissances en fonction de nombreux critères",
     "code": "SCAN_04"
+  },
+  {
+    "label": "Esprit d'équipe",
+    "description": "Nombreux projets réalisés en équipes de 3 à 6, dont certains en tant que chef de projet",
+    "code": "TEAM_02"
   }
 ]
