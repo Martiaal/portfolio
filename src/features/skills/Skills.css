@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 80px 0;
+    padding: 40px 0; /* Réduit (était 80px) */
 }
 
 /* --- GRILLE ET CONTENU --- */
@@ -17,64 +17,58 @@
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2.5rem;
+    /* Augmentation du nombre de colonnes en réduisant la taille min (220px au lieu de 280px) */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem; /* Réduit (était 2.5rem) */
     width: 100%;
-    max-width: 1100px;
+    max-width: 1000px; /* Légèrement réduit pour serrer le design */
     padding: 0 20px;
 }
 
 /* --- SKILL CARD (LE MODULE JAUNE) --- */
 .skill-module-yellow {
     background-color: var(--third-color);
-    padding: 25px;
+    padding: 16px; /* Réduit (était 25px) */
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 92% 100%, 0 100%);
-    border-bottom: 6px solid var(--main-bg-color);
+    gap: 12px; /* Réduit (était 20px) */
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 92% 100%, 0 100%);
+    border-bottom: 4px solid var(--main-bg-color); /* Affiné */
     transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
     cursor: pointer;
 }
 
 .skill-module-yellow:hover {
-    transform: translateY(-10px) rotate(1deg);
-    box-shadow: 10px 10px 0 var(--secondary-color);
+    transform: translateY(-5px) rotate(0.5deg);
+    box-shadow: 6px 6px 0 var(--secondary-color);
 }
 
 /* Header de la carte */
 .skill-card-top {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px; /* Réduit */
 }
 
 .skill-icon-wrapper {
     background: rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(4px);
-    padding: 10px;
+    padding: 8px; /* Réduit */
     display: flex;
     align-items: center;
     justify-content: center;
     clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%, 0 20%);
-    min-width: 50px;
-    min-height: 50px;
+    min-width: 40px; /* Réduit (était 50px) */
+    min-height: 40px; /* Réduit (était 50px) */
     border: 1px solid rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
 
-.skill-module-yellow:hover .skill-icon-wrapper {
-    background: rgba(0, 0, 0, 0.8);
-    border-color: var(--secondary-color);
-}
-
 .skill-icon-dark {
-    width: 32px;
-    height: 32px;
+    width: 24px; /* Réduit (était 32px) */
+    height: 24px;
     object-fit: contain;
-    filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.1));
-    transition: transform 0.3s ease;
 }
 
 .skill-info {
@@ -84,7 +78,7 @@
 
 .skill-id-dark {
     font-family: 'Orbitron', sans-serif;
-    font-size: 0.6rem;
+    font-size: 0.5rem; /* Plus petit */
     color: var(--main-bg-color);
     opacity: 0.6;
     font-weight: 900;
@@ -95,45 +89,43 @@
     font-family: 'Orbitron', sans-serif;
     color: var(--main-bg-color);
     margin: 0;
-    font-size: 1.3rem;
+    font-size: 1rem; /* Réduit (était 1.3rem) */
     font-weight: 900;
     text-transform: uppercase;
     line-height: 1;
 }
 
-/* --- JAUGE DE PROGRESSION ANIMÉE --- */
+/* --- JAUGE DE PROGRESSION --- */
 .skill-level-section {
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .skill-level-meta {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
 }
 
 .skill-label-dark {
     font-family: 'Orbitron', sans-serif;
-    font-size: 0.7rem;
+    font-size: 0.6rem; /* Réduit */
     color: var(--main-bg-color);
     font-weight: 800;
-    letter-spacing: 1px;
 }
 
 .skill-percent-dark {
     font-family: 'Orbitron', sans-serif;
-    font-size: 1rem;
+    font-size: 0.85rem; /* Réduit */
     font-weight: 900;
     color: var(--main-bg-color);
-    animation: text-pulse 2s infinite alternate;
 }
 
 .skill-bar-bg {
-    height: 12px;
+    height: 8px; /* Plus fin (était 12px) */
     background: rgba(0, 0, 0, 0.1);
-    border: 2px solid var(--main-bg-color);
-    padding: 2px;
+    border: 1.5px solid var(--main-bg-color);
+    padding: 1px;
     position: relative;
     overflow: hidden;
 }
@@ -144,29 +136,10 @@
     position: relative;
     overflow: hidden;
     transition: width 1.5s cubic-bezier(0.23, 1, 0.32, 1);
-    /* Animation de scintillement constant */
     animation: bar-flicker 4s infinite step-end;
 }
 
-/* Reflet de flux de données (shimmer) */
-.skill-bar-fill::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(252, 238, 10, 0.25),
-            transparent
-    );
-    animation: shimmer 2.5s infinite linear;
-    z-index: 1;
-}
-
-/* Rayures de danger - ANIMATION DE DÉFILEMENT AJOUTÉE */
+/* Rayures de danger - Défilement */
 .skill-bar-fill::after {
     content: "";
     position: absolute;
@@ -180,22 +153,15 @@
             rgba(252, 238, 10, 0.3) 75%,
             transparent 75%
     );
-    background-size: 20px 20px; /* Légèrement agrandi pour un meilleur effet visuel */
+    background-size: 15px 15px; /* Réduit pour s'adapter à la barre fine */
     z-index: 2;
-    animation: progress-move 1s linear infinite; /* Animation de défilement */
+    animation: progress-move 1s linear infinite;
 }
 
 /* --- ANIMATIONS --- */
-
-/* Défilement des rayures */
 @keyframes progress-move {
     0% { background-position: 0 0; }
-    100% { background-position: 20px 0; }
-}
-
-@keyframes shimmer {
-    0% { left: -100%; }
-    100% { left: 100%; }
+    100% { background-position: 15px 0; }
 }
 
 @keyframes bar-flicker {
@@ -204,45 +170,42 @@
     100% { opacity: 1; }
 }
 
-@keyframes text-pulse {
-    0% { opacity: 1; transform: scale(1); }
-    100% { opacity: 0.7; transform: scale(0.95); }
-}
-
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
+    from { opacity: 0; transform: translateY(15px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
 /* Éléments de décoration Hardware */
 .card-screw {
     position: absolute;
-    width: 5px;
-    height: 5px;
+    width: 4px; /* Plus petit */
+    height: 4px;
     background: var(--main-bg-color);
     border-radius: 50%;
-    opacity: 0.4;
+    opacity: 0.3;
 }
-.card-screw.tl { top: 10px; left: 10px; }
-.card-screw.tr { top: 10px; right: 10px; }
+.card-screw.tl { top: 6px; left: 6px; }
+.card-screw.tr { top: 6px; right: 6px; }
 
 .card-tech-lines {
     position: absolute;
-    bottom: 8px;
-    right: 20px;
-    width: 45px;
-    height: 12px;
+    bottom: 6px;
+    right: 15px;
+    width: 30px; /* Réduit */
+    height: 8px;
     background: repeating-linear-gradient(
             90deg,
             var(--main-bg-color),
-            var(--main-bg-color) 2px,
-            transparent 2px,
-            transparent 5px
+            var(--main-bg-color) 1px,
+            transparent 1px,
+            transparent 3px
     );
     opacity: 0.15;
 }
 
 @media (max-width: 768px) {
-    .skills-grid { grid-template-columns: 1fr; }
-    .nav-btn { padding: 10px 20px; font-size: 0.8rem; }
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1rem;
+    }
 }
