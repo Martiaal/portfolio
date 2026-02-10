@@ -44,8 +44,15 @@
 }
 
 .nav-box-item {
+    /* Reset styles de bouton */
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+
+    /* Styles du lien original */
     padding: 10px 15px;
-    text-decoration: none;
     color: var(--main-bg-color);
     font-family: 'Rajdhani', sans-serif;
     font-weight: 700;
