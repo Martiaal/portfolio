@@ -3,7 +3,7 @@
     --btn-color: var(--secondary-color);
     --glitch-color: var(--third-color);
 
-    width: 100%;
+    width: fit-content;
     box-sizing: border-box;
     display: inline-block;
     padding: 12px 20px;
@@ -21,6 +21,12 @@
     cursor: pointer;
     transition: all 0.1s ease; /* Transition très rapide pour le côté nerveux */
     outline: none;
+}
+
+.relative-button {
+    position: fixed;
+    top: 30px;
+    left: 30px;
 }
 
 /* L'effet au survol */

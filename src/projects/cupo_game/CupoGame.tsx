@@ -3,8 +3,10 @@ import {Frame} from "../../components/Frame.tsx";
 import {ControlItem, ControlPanel, ControlSection, KeyControl, KeyControlItem} from "../../components/ControlPanel.tsx";
 import {AppButton} from "../../components/AppButton.tsx";
 import {MainTitle} from "../../components/MainTitle.tsx";
+import { useNavigate } from 'react-router-dom';
 
 export const CupoGame = () => {
+    const navigate = useNavigate();
 
     const handleDownload = () => {
         const link = document.createElement('a');
@@ -17,6 +19,7 @@ export const CupoGame = () => {
 
     return (
         <div className="cupo-game-container">
+            <AppButton label={"BACK_HOME"} onClick={() => navigate("/")} relativePosition={true}/>
             <MainTitle title={"CUPO'S ADVENTURES"}/>
 
             <div className="cupo-game-content">
