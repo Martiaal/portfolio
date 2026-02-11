@@ -1,0 +1,125 @@
+.game-controls-panel {
+    background: var(--main-bg-color);
+    border: 3px solid var(--secondary-color);
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    box-shadow:
+            0 0 30px rgba(0, 240, 255, 0.2),
+            inset 0 0 50px rgba(0, 240, 255, 0.05);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 15px);
+}
+
+.panel-header {
+    background: var(--third-color);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%, 0 85%);
+}
+
+.panel-title {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: var(--main-bg-color);
+    letter-spacing: 1px;
+}
+
+.panel-barcode {
+    width: 50px;
+    height: 20px;
+    background: linear-gradient(90deg,
+    var(--main-bg-color) 8%, transparent 8%,
+    transparent 15%, var(--main-bg-color) 15%,
+    var(--main-bg-color) 18%, transparent 18%,
+    transparent 25%, var(--main-bg-color) 25%,
+    var(--main-bg-color) 45%, transparent 45%,
+    transparent 55%, var(--main-bg-color) 55%,
+    var(--main-bg-color) 60%, transparent 60%,
+    transparent 70%, var(--main-bg-color) 70%,
+    var(--main-bg-color) 90%, transparent 90%);
+}
+
+.control-section {
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.15);
+}
+
+.section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--third-color);
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+}
+
+.key {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 35px;
+    height: 35px;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    background: rgba(0, 240, 255, 0.05);
+    box-shadow: 0 0 5px rgba(0, 240, 255, 0.2);
+}
+
+.key.wide {
+    padding: 0 15px;
+    width: auto;
+}
+
+.control-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.action-label {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.engine-text {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    color: var(--secondary-color);
+    font-size: 0.85rem;
+}
+
+.control-icon {
+    width: 1.75rem;
+}
+
+.panel-footer {
+    margin-top: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-line {
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, var(--secondary-color) 50%, transparent 100%);
+}
+
+.footer-info {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.65rem;
+    color: var(--secondary-color);
+    letter-spacing: 1px;
+}

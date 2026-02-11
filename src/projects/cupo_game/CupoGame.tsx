@@ -1,15 +1,23 @@
 import './CupoGame.css'
 import {Frame} from "../../components/Frame.tsx";
+import {ControlItem, ControlPanel, ControlSection, KeyControl, KeyControlItem} from "../../components/ControlPanel.tsx";
+import {AppButton} from "../../components/AppButton.tsx";
+import {MainTitle} from "../../components/MainTitle.tsx";
 
 export const CupoGame = () => {
+
+    const handleDownload = () => {
+        const link = document.createElement('a');
+        link.href = '/portfolio/games/cupo_game/cupo_adventures.zip';
+        link.download = 'cupo_adventures.zip';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
     return (
         <div className="cupo-game-container">
-            <div className="cupo-game-header">
-                <h1 className="cupo-game-title" data-text="LES AVENTURES DE CUPO">
-                    LES AVENTURES DE CUPO
-                    <span className="cupo-subtitle">GAME ZONE</span>
-                </h1>
-            </div>
+            <MainTitle title={"CUPO'S ADVENTURES"}/>
 
             <div className="cupo-game-content">
                 <Frame
@@ -17,72 +25,38 @@ export const CupoGame = () => {
                     title={"Les aventures de Cupo"}
                 />
 
-                <div className="game-controls-panel">
-                    <div className="panel-header">
-                        <div className="panel-title">SYSTEM DATA</div>
-                        <div className="panel-barcode"></div>
-                    </div>
+                <ControlPanel title={"SYSTEM DATA"} footerVal={"V-2.0.0"}>
 
-                    {/* Section Mouvements - Disposition Clavier */}
-                    <div className="control-section">
-                        <div className="section-title">MOVEMENT</div>
+                    <ControlSection title={"MOVEMENT"}>
                         <div className="keyboard-layout">
                             <div className="key-row center">
-                                <span className="key">Z</span>
+                                <KeyControl keyValue={"Z"}/>
                             </div>
                             <div className="key-row">
-                                <span className="key">Q</span>
-                                <span className="key">S</span>
-                                <span className="key">D</span>
+                                <KeyControl keyValue={"Q"}/>
+                                <KeyControl keyValue={"S"}/>
+                                <KeyControl keyValue={"D"}/>
                             </div>
                         </div>
-                    </div>
+                    </ControlSection>
 
-                    {/* Section Combat */}
-                    <div className="control-section">
-                        <div className="section-title">COMBAT</div>
-                        <div className="control-item">
-                            <span className="key wide">SPACE</span>
-                            <span className="action-label">FIRE</span>
-                        </div>
-                    </div>
+                    <ControlSection title={"COMBAT"}>
+                        <KeyControlItem keyValue={"SPACE"} isWide={true} actionLabel={"FIRE"}/>
+                    </ControlSection>
 
-                    {/* Section Cheat/Shortcuts */}
-                    <div className="control-section">
-                        <div className="section-title">SHORTCUTS</div>
-                        <div className="control-item">
-                            <span className="key">R</span>
-                            <span className="action-label">WARP TO BOSS</span>
-                        </div>
-                    </div>
+                    <ControlSection title={"SHORTCUTS"}>
+                        <KeyControlItem keyValue={"R"} actionLabel={"INSTANT BOSS"}/>
+                    </ControlSection>
 
-                    {/* Section Engine */}
-                    <div className="control-section">
-                        <div className="section-title">ENGINE</div>
-                        <div className="control-item">
-                            <span className="control-icon">⚙</span>
-                            <span className="engine-text">PYGAME CORE</span>
-                        </div>
-                    </div>
+                    <ControlSection title="ENGINE">
+                        <ControlItem label={"PYTHON / PYGAME"} icon={"/portfolio/icons/engine.svg"}/>
+                    </ControlSection>
 
-                    {/* NOUVELLE SECTION : Mission Data */}
-                    <div className="control-section">
-                        <div className="section-title">MISSION PROGRESS</div>
-                        <div className="progress-container">
-                            <div className="progress-value">84%</div>
-                            <div className="progress-bar-wrapper">
-                                <div className="progress-bar-fill"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="panel-footer">
-                        <div className="footer-line"></div>
-                        <div className="footer-info">
-                            <span>V-2.0.0</span>
-                        </div>
-                    </div>
-                </div>
+                    <ControlSection title={"SOURCE CODE"}>
+                        <AppButton label={"DOWNLOAD_GAME"}
+                                   onClick={handleDownload}/>
+                    </ControlSection>
+                </ControlPanel>
             </div>
         </div>
     )
