@@ -9,6 +9,7 @@ import skillsData from "../datas/skills.json";
 import expData from "../datas/experiences.json";
 import softSkillsData from "../datas/softskills.json";
 import type {ExpItem, ProjectsCategories, SkillTitles, SoftSkill} from "../types/types.ts";
+import {NavBox} from "../components/NavBox.tsx";
 
 
 export const HomePage = () => {
@@ -19,6 +20,7 @@ export const HomePage = () => {
 
     return (
         <>
+            <NavBox/>
             <AboutMe/>
             <Skills skills={skills} projects={projects}/>
             <SoftSkills softSkills={softSkills}/>

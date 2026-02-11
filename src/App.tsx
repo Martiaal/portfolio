@@ -1,14 +1,14 @@
 import {HashRouter as Router, Route, Routes} from 'react-router-dom';
-import { NavBox } from "./components/NavBox.tsx";
 import {HomePage} from "./features/Home";
+import {CupoGame} from "./projects/cupo_game/CupoGame.tsx";
 
 function App() {
 
       return (
           <Router>
-              <NavBox/>
               <Routes>
                   <Route path={"/"} element={<HomePage/>}/>
+                  <Route path={"/shooter"} element={<CupoGame/>}/>
               </Routes>
           </Router>
       )

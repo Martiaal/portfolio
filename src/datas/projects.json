@@ -59,7 +59,8 @@
         "name": "Shooter Game",
         "image": "images/projects/shooter.png",
         "description": "Jeu de tir développé avec le langage python",
-        "tags": ["Python"]
+        "tags": ["Python"],
+        "link": "/shooter"
       }
     ]
   }

@@ -1,9 +1,18 @@
 import "./Projects.css";
 import type {Project} from "../../types/types.ts";
+import {useNavigate} from "react-router-dom";
 
-export const ProjectCard = ({ name, image, description, tags }: Project) => {
+export const ProjectCard = ({ name, image, description, tags, link }: Project) => {
+    const navigate = useNavigate();
+
+    const navigateToProject = () => {
+        if(link) {
+            navigate(link);
+        }
+    }
+
     return (
-        <div className="project-card">
+        <div className="project-card" onClick={navigateToProject}>
             <div className="project-image-container">
                 <img src={image} alt={name} className="project-image" />
                 <div className="project-overlay"></div>
