@@ -1,0 +1,93 @@
+.game-frame-container {
+    position: relative;
+    background: var(--third-color);
+    padding: 15px;
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 95% 100%, 0 100%);
+    box-shadow:
+            0 0 40px rgba(0, 240, 255, 0.3),
+            15px 15px 0 rgba(0, 240, 255, 0.15);
+    border-right: 6px solid var(--secondary-color);
+    border-bottom: 6px solid var(--secondary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0;
+}
+
+.game-frame-container:hover {
+    transform: translateY(-5px);
+    box-shadow:
+            0 0 60px rgba(0, 240, 255, 0.5),
+            20px 20px 0 rgba(0, 240, 255, 0.2);
+}
+
+.frame-corner {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border: 3px solid var(--main-bg-color);
+    z-index: 10;
+}
+
+.frame-corner-tl {
+    top: 8px;
+    left: 8px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.frame-corner-tr {
+    top: 8px;
+    right: 8px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.frame-corner-bl {
+    bottom: 8px;
+    left: 8px;
+    border-right: none;
+    border-top: none;
+}
+
+.frame-corner-br {
+    bottom: 8px;
+    right: 8px;
+    border-left: none;
+    border-top: none;
+}
+
+.game-iframe {
+    display: block;
+    width: 800px;
+    height: 600px;
+    border: none;
+    background: var(--main-bg-color);
+    position: relative;
+    z-index: 1;
+}
+
+.game-scanline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 240, 255, 0.03) 2px,
+            rgba(0, 240, 255, 0.03) 4px
+    );
+    pointer-events: none;
+    z-index: 2;
+    animation: scanline 8s linear infinite;
+}
+
+@keyframes scanline {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(20px);
+    }
+}
