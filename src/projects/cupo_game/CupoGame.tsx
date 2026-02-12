@@ -4,17 +4,13 @@ import {ControlItem, ControlPanel, ControlSection, KeyControl, KeyControlItem} f
 import {AppButton} from "../../components/AppButton.tsx";
 import {MainTitle} from "../../components/MainTitle.tsx";
 import { useNavigate } from 'react-router-dom';
+import {handleDownload} from "../../services/utils.ts";
 
 export const CupoGame = () => {
     const navigate = useNavigate();
 
-    const handleDownload = () => {
-        const link = document.createElement('a');
-        link.href = '/portfolio/games/cupo_game/cupo_adventures.zip';
-        link.download = 'cupo_adventures.zip';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+    const download = () => {
+        handleDownload('/portfolio/games/cupo_game/cupo_adventures.zip');
     }
 
     return (
@@ -57,7 +53,7 @@ export const CupoGame = () => {
 
                     <ControlSection title={"SOURCE CODE"}>
                         <AppButton label={"DOWNLOAD_GAME"}
-                                   onClick={handleDownload}/>
+                                   onClick={download}/>
                     </ControlSection>
                 </ControlPanel>
             </div>

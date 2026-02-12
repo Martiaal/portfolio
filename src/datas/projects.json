@@ -53,7 +53,8 @@
         "name": "Qix",
         "image": "images/projects/qix.png",
         "description": "Refonte du jeu d'arcade Qix, avec le langage python",
-        "tags": ["Python"]
+        "tags": ["Python"],
+        "link": "/qix"
       },
       {
         "name": "Shooter Game",

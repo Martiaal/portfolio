@@ -1,0 +1,36 @@
+
+.qix-game-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 60px 20px;
+    box-sizing: border-box;
+}
+
+.qix-game-top-container {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Clavier Disposition */
+.keyboard-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.key-row {
+    display: flex;
+    gap: 4px;
+}
+
+.key-row.center {
+    padding-left: 39px; /* Alignement du Z au dessus du S */
+}
