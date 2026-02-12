@@ -1,5 +1,6 @@
 import "./SkillModal.css";
 import type {ProjectsCategories} from "../../../types/types.ts";
+import {useNavigate} from "react-router-dom";
 
 interface SkillModalProps {
     skillName: string;
@@ -8,6 +9,7 @@ interface SkillModalProps {
 }
 
 export const SkillModal = ({ skillName, onClose, projects }: SkillModalProps) => {
+    const navigate = useNavigate();
     const filteredProjects = projects.flatMap(cat => cat.items).filter(project =>
         project.tags.some(tag => tag.toLowerCase() === skillName.toLowerCase())
     );
@@ -25,7 +27,9 @@ export const SkillModal = ({ skillName, onClose, projects }: SkillModalProps) =>
                 <div className="projects-mini-grid">
                     {filteredProjects.length > 0 ? (
                         filteredProjects.map((project, idx) => (
-                            <div key={idx} className="mini-project-card">
+                            <div key={idx} className="mini-project-card" onClick={() => {
+                                if(project.link) {navigate(project.link); onClose(); }
+                            }}>
                                 <div className="mini-img-wrapper">
                                     <img src={project.image} alt={project.name} />
                                 </div>
