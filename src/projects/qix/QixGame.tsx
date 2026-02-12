@@ -17,17 +17,17 @@ export const QixGame = () => {
     const images = [
         {
             image: "/portfolio/games/qix/images/qix_debut_game.png",
-            description: "Debut game with basic mechanics and single player mode",
+            description: "The player has to move around the board and create closed shapes to capture territory while avoiding the Qix and Sparx.",
             title: "Debut Game"
         },
         {
             image: "/portfolio/games/qix/images/qix_end_game.png",
-            description: "Mid game with many ennemies",
+            description: "More enemies appears as the player advance through levels, making it increasingly difficult to survive.",
             title: "End Game"
         },
         {
             image: "/portfolio/games/qix/images/qix_two_players.png",
-            description: "Debut game with two players",
+            description: "Possibility to have two players playing simultaneously, competing for territory and trying to outscore each other.",
             title: "Two Players"
         }
     ]
