@@ -33,11 +33,11 @@ export const QixGame = () => {
     ]
 
     return (
-        <div className={"qix-game-container"}>
+        <div className={"project-main-container"}>
             <AppButton label={"BACK_HOME"} onClick={() => navigate("/")} relativePosition={true}/>
             <MainTitle title={"QIX"}/>
 
-            <div className={"qix-game-top-container"}>
+            <div className={"project-main-top-content"}>
                 <Carousel items={images}/>
 
                 <ControlPanel title={"SYSTEM DATA"} footerVal={"V-2.0.0"}>

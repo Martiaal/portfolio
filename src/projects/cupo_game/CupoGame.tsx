@@ -14,11 +14,11 @@ export const CupoGame = () => {
     }
 
     return (
-        <div className="cupo-game-container">
+        <div className="project-main-container">
             <AppButton label={"BACK_HOME"} onClick={() => navigate("/")} relativePosition={true}/>
             <MainTitle title={"CUPO'S ADVENTURES"}/>
 
-            <div className="cupo-game-content">
+            <div className="project-main-top-content">
                 <Frame
                     src={"/portfolio/games/cupo_game/index.html"}
                     title={"Les aventures de Cupo"}
