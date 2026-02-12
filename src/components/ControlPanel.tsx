@@ -1,5 +1,5 @@
 import "./ControlPanel.css";
-import type {ReactNode} from "react";
+import type {CSSProperties, ReactNode} from "react";
 
 interface ControlPanelProps {
     title: string;
@@ -98,4 +98,31 @@ export const ControlItem = (
             <span className="engine-text">{label}</span>
         </div>
     )
+}
+
+interface StatusBadgeProps {
+    label: string;
+    type?: "default" | "warning" | "success";
+}
+
+export const StatusBadge = ({ label, type = "default" }: StatusBadgeProps) => {
+    return <span className={`status-badge ${type}`}>{label}</span>;
+}
+
+interface ColorIndicatorProps {
+    colors: string[];
+}
+
+export const ColorIndicator = ({ colors }: ColorIndicatorProps) => {
+    return (
+        <div className="color-indicator-group">
+            {colors.map((color, index) => (
+                <div
+                    key={index}
+                    className="color-dot"
+                    style={{ '--dot-color': color } as CSSProperties}
+                />
+            ))}
+        </div>
+    );
 }

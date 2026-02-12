@@ -47,7 +47,8 @@
         "name": "Codex Naturalis",
         "image": "images/projects/codex.png",
         "description": "Portage du jeu de société \"Codex Naturalis\" avec le langage Java",
-        "tags": ["Java"]
+        "tags": ["Java"],
+        "link": "/codex_naturalis"
       },
       {
         "name": "Qix",
