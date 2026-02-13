@@ -156,3 +156,46 @@
     gap: 8px;
     margin-top: 5px;
 }
+
+/* Badge de rôle avec point lumineux */
+.role-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(250, 238, 10, 0.1); /* Utilisation du jaune third-color */
+    padding: 5px 12px;
+    border-left: 3px solid var(--third-color);
+}
+
+.role-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--third-color);
+    box-shadow: 0 0 8px var(--third-color);
+    border-radius: 50%;
+}
+
+.role-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--third-color);
+    letter-spacing: 1px;
+}
+
+/* Tags de technos */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tech-tag {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--main-bg-color);
+    background: var(--secondary-color);
+    padding: 2px 6px;
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+}

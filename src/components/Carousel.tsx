@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Carousel.css';
+import {AppButton} from "./AppButton.tsx";
 
 interface CarouselItem {
     image: string;
@@ -42,14 +43,8 @@ export const Carousel = ({ items, width = "800px", height = "600px" }: CarouselP
                 </div>
 
                 <div className="carousel-header-right">
-                    <button
-                        className={`carousel-action-trigger ${showDescription ? 'is-active' : ''}`}
-                        onClick={() => setShowDescription(!showDescription)}
-                    >
-                        <span className="carousel-trigger-text">
-                            {showDescription ? "TERMINATE_LOG" : "ACCESS_DESCRIPTION"}
-                        </span>
-                    </button>
+                    <AppButton label={showDescription ? "[-] TERMINATE_LOG" : "[+] ACCESS_DESCRIPTION"}
+                               onClick={() => setShowDescription(!showDescription)}/>
                 </div>
             </div>
 

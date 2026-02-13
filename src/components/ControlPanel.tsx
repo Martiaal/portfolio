@@ -126,3 +126,31 @@ export const ColorIndicator = ({ colors }: ColorIndicatorProps) => {
         </div>
     );
 }
+
+
+interface RoleBadgeProps {
+    role: string;
+}
+
+export const RoleBadge = ({ role }: RoleBadgeProps) => {
+    return (
+        <div className="role-badge">
+            <div className="role-dot"></div>
+            <span className="role-text">{role}</span>
+        </div>
+    );
+}
+
+interface TechStackProps {
+    techs: string[];
+}
+
+export const TechStack = ({ techs }: TechStackProps) => {
+    return (
+        <div className="tech-stack">
+            {techs.map((tech, index) => (
+                <span key={index} className="tech-tag">{tech}</span>
+            ))}
+        </div>
+    );
+}

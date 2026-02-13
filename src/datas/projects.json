@@ -18,7 +18,8 @@
         "name": "Project Algiers",
         "image": "images/projects/algiers.png",
         "description": "Site internet visant à promouvoir l'histoire et la culture algéroise, en partenariat avec l'UNESCO",
-        "tags": ["CSS", "HTML", "MySQL", "PHP"]
+        "tags": ["CSS", "HTML", "MySQL", "PHP"],
+        "link": "/algiers"
       },
       {
         "name": "Speedy Wiki",

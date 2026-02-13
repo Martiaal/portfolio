@@ -107,6 +107,6 @@ body {
   display: flex;
   gap: 2rem;
   align-items: flex-start;
-  max-width: 1200px;
+  justify-content: center;
   width: 100%;
 }
