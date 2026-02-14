@@ -4,6 +4,7 @@ import {CupoGame} from "./projects/cupo_game/CupoGame.tsx";
 import {QixGame} from "./projects/qix/QixGame.tsx";
 import {CodexNaturalis} from "./projects/codex_naturalis/CodexNaturalis.tsx";
 import {Algiers} from "./projects/algiers/Algiers.tsx";
+import {Travia} from "./projects/travia/Travia.tsx";
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
                   <Route path={"/qix"} element={<QixGame/>}/>
                   <Route path={"/codex_naturalis"} element={<CodexNaturalis/>}/>
                   <Route path={"/algiers"} element={<Algiers/>}/>
+                  <Route path={"/travia"} element={<Travia/>}/>
               </Routes>
           </Router>
       )

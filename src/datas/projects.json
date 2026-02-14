@@ -28,16 +28,11 @@
         "tags": ["MongoDB", "NodeJS", "Python", "React", "TypeScript"]
       },
       {
-        "name": "Swiftrail",
-        "image": "images/projects/swiftrail.png",
-        "description": "Site permettant aux particuliers de consulter et acheter des billets de train pour voyager en France",
-        "tags": ["MongoDB", "NodeJS", "React", "TypeScript"]
-      },
-      {
         "name": "Travia",
         "image": "images/projects/travia.png",
         "description": "Site simulant des voyages intra-galactiques dans l'univers de Star Wars",
-        "tags": ["CSS", "HTML", "JavaScript", "MySQL", "PHP"]
+        "tags": ["CSS", "HTML", "JavaScript", "MySQL", "PHP"],
+        "link": "/travia"
       }
     ]
   },

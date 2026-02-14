@@ -154,3 +154,17 @@ export const TechStack = ({ techs }: TechStackProps) => {
         </div>
     );
 }
+
+interface DataCounterProps {
+    label: string;
+    value: string;
+}
+
+export const DataCounter = ({ label, value }: DataCounterProps) => {
+    return (
+        <div className="data-counter">
+            <span className="counter-label">{label}</span>
+            <span className="counter-value">{value}</span>
+        </div>
+    );
+}
