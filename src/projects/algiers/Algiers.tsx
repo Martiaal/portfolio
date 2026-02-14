@@ -34,6 +34,26 @@ export const Algiers = () => {
             image: "/portfolio/games/algiers/images/algiers_history.png",
             description: "Retrouvez des sections plus détaillées sur l'histoire de la ville",
             title: "Histoire"
+        },
+        {
+            image: "/portfolio/games/algiers/images/algiers_architecture.png",
+            description: "Découvrez les les différents monuments et quartiers de la ville d'Alger",
+            title: "Histoire"
+        },
+        {
+            image: "/portfolio/games/algiers/images/algiers_culture.png",
+            description: "Découvrez les différentes facettes de la culture algéroise, de l'art à la musique en passant par la religion",
+            title: "Histoire"
+        },
+        {
+            image: "/portfolio/games/algiers/images/algiers_food.png",
+            description: "Explication des spécialités culinaires de la ville d'Alger, ainsi que des restaurants où les déguster",
+            title: "Histoire"
+        },
+        {
+            image: "/portfolio/games/algiers/images/algiers_route.png",
+            description: "Présentation de différents parcours touristiques à travers la ville d'Alger",
+            title: "Histoire"
         }
     ]
 
