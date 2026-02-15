@@ -50,13 +50,10 @@ export const EiffelTime = () => {
             <div className={"project-main-top-content"}>
                 <Carousel items={images} width={"1000px"} height={"500px"}/>
 
-                <ControlPanel title={"UNIVERSITY TERMINAL"} footerVal={"V 0.8"}>
+                <ControlPanel title={"EIFFEL_TIME"} footerVal={"V 0.8"}>
 
-                    <ControlSection title={"CONTRIBUTIONS"}>
-                        <RoleBadge role={"DEVELOPPEUR FULLSTACK"} />
-                        <div style={{marginTop: '8px'}}>
-                            <RoleBadge role={"UI / UX DESIGNER"} />
-                        </div>
+                    <ControlSection title={"MY ROLE"}>
+                        <RoleBadge role={"DEVELOPPEUR BACKEND"} />
                     </ControlSection>
 
                     <ControlSection title={"CORE FEATURES"}>
