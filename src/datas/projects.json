@@ -6,7 +6,8 @@
         "name": "Eiffel Time",
         "image": "images/projects/eiffel_time.png",
         "description": "Interface universitaire assurant la gestion des notes / absences / appels / emploi du temps pour les élèves / professeurs / secrétaires et gestionnaires",
-        "tags": ["Django", "Postgre SQL", "React", "TypeScript"]
+        "tags": ["Django", "Postgre SQL", "React", "TypeScript"],
+        "link": "/eiffel_time"
       },
       {
         "name": "Harmoneyca",
