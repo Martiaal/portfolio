@@ -2,6 +2,13 @@ import {AppButton} from "../../components/AppButton.tsx";
 import {useNavigate} from "react-router-dom";
 import {MainTitle} from "../../components/MainTitle.tsx";
 import {Carousel} from "../../components/Carousel.tsx";
+import {
+    ControlItem,
+    ControlPanel,
+    ControlSection,
+    RoleBadge,
+    TechStack
+} from "../../components/ControlPanel.tsx";
 
 
 export const EiffelTime = () => {
@@ -42,6 +49,34 @@ export const EiffelTime = () => {
 
             <div className={"project-main-top-content"}>
                 <Carousel items={images} width={"1000px"} height={"500px"}/>
+
+                <ControlPanel title={"UNIVERSITY TERMINAL"} footerVal={"V 0.8"}>
+
+                    <ControlSection title={"CONTRIBUTIONS"}>
+                        <RoleBadge role={"DEVELOPPEUR FULLSTACK"} />
+                        <div style={{marginTop: '8px'}}>
+                            <RoleBadge role={"UI / UX DESIGNER"} />
+                        </div>
+                    </ControlSection>
+
+                    <ControlSection title={"CORE FEATURES"}>
+                        <ControlItem label={"GESTION DES ABSENCES"} icon={"/portfolio/icons/absence.svg"}/>
+                        <div style={{marginTop: '10px'}}>
+                            <ControlItem label={"QR CODE DYNAMIQUE"} icon={"/portfolio/icons/qr-code.svg"}/>
+                        </div>
+                        <div style={{marginTop: '10px'}}>
+                            <ControlItem label={"SYSTÈME DE PLANNING"} icon={"/portfolio/icons/planning.svg"}/>
+                        </div>
+                        <div style={{marginTop: '10px'}}>
+                            <ControlItem label={"MIGRATION ANNUELLE"} icon={"/portfolio/icons/cycle.svg"}/>
+                        </div>
+                    </ControlSection>
+
+                    <ControlSection title={"TECHNOLOGIES"}>
+                        <TechStack techs={["REACT", "DJANGO", "TYPESCRIPT", "POSTGRESQL"]} />
+                    </ControlSection>
+
+                </ControlPanel>
             </div>
         </div>
     )

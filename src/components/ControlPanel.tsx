@@ -168,3 +168,21 @@ export const DataCounter = ({ label, value }: DataCounterProps) => {
         </div>
     );
 }
+
+
+interface FeatureItemProps {
+    label: string;
+    description: string;
+}
+
+export const FeatureItem = ({ label, description }: FeatureItemProps) => {
+    return (
+        <div className="feature-item">
+            <div className="feature-dot"></div>
+            <div className="feature-content">
+                <div className="feature-label">{label}</div>
+                <div className="feature-desc">{description}</div>
+            </div>
+        </div>
+    );
+}

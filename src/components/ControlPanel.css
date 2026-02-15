@@ -254,3 +254,50 @@
     50% { opacity: 0.4; }
     100% { opacity: 1; }
 }
+
+/* Style pour les icônes dans les ControlItems */
+.control-icon {
+    width: 20px;
+    height: 20px;
+    filter: drop-shadow(0 0 5px var(--secondary-color));
+    opacity: 0.8;
+}
+
+/* Nouveau composant FeatureItem pour des listes plus détaillées */
+.feature-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 10px;
+    padding: 8px;
+    background: rgba(0, 240, 255, 0.03);
+    border-left: 2px solid rgba(0, 240, 255, 0.2);
+}
+
+.feature-dot {
+    width: 4px;
+    height: 4px;
+    background: var(--secondary-color);
+    margin-top: 6px;
+    border-radius: 50%;
+}
+
+.feature-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+.feature-desc {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.7rem;
+    color: var(--secondary-color);
+    opacity: 0.6;
+}
+
+/* Animation pour donner un côté "système actif" aux icônes */
+.control-icon:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px var(--secondary-color));
+    transition: all 0.2s ease;
+}
