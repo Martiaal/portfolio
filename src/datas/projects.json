@@ -13,7 +13,8 @@
         "name": "Harmoneyca",
         "image": "images/projects/harmoneyca.png",
         "description": "Interface de gestion bancaire dédiée aux entreprises",
-        "tags": ["CSS", "HTML", "JavaScript", "MySQL", "PHP"]
+        "tags": ["CSS", "HTML", "JavaScript", "MySQL", "PHP"],
+        "link": "/harmoneyca"
       },
       {
         "name": "Project Algiers",

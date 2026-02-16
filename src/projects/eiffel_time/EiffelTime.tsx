@@ -54,6 +54,9 @@ export const EiffelTime = () => {
 
                     <ControlSection title={"MY ROLE"}>
                         <RoleBadge role={"DEVELOPPEUR BACKEND"} />
+                        <div style={{marginTop: '10px'}}>
+                            <RoleBadge role={"CRÉATION DE LA BDD"} />
+                        </div>
                     </ControlSection>
 
                     <ControlSection title={"CORE FEATURES"}>
