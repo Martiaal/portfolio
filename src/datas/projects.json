@@ -26,7 +26,8 @@
         "name": "Speedy Wiki",
         "image": "images/projects/speedywiki.png",
         "description": "Site permettant de jouer avec des amis au jeu de Wikipédia (Aller d'une page à une autre le plus rapidement possible)",
-        "tags": ["MongoDB", "NodeJS", "Python", "React", "TypeScript"]
+        "tags": ["MongoDB", "NodeJS", "Python", "React", "TypeScript"],
+        "link": "/speedy_wiki"
       },
       {
         "name": "Travia",

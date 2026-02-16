@@ -6,6 +6,7 @@ import {CodexNaturalis} from "./projects/codex_naturalis/CodexNaturalis.tsx";
 import {Algiers} from "./projects/algiers/Algiers.tsx";
 import {Travia} from "./projects/travia/Travia.tsx";
 import {EiffelTime} from "./projects/eiffel_time/EiffelTime.tsx";
+import {SpeedyWiki} from "./projects/speedy_wiki/SpeedyWiki.tsx";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
                   <Route path={"/algiers"} element={<Algiers/>}/>
                   <Route path={"/travia"} element={<Travia/>}/>
                   <Route path={"/eiffel_time"} element={<EiffelTime/>}/>
+                  <Route path={"/speedy_wiki"} element={<SpeedyWiki/>}/>
               </Routes>
           </Router>
       )
