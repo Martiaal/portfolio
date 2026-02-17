@@ -1,0 +1,310 @@
+/* ─── WRAPPER ─────────────────────────────────────────────────────────────── */
+
+.gv-wrapper {
+    position: relative;
+    width: 100%;
+    flex-shrink: 0;
+    background: var(--main-bg-color);
+    border: 0.15rem solid var(--secondary-color);
+    box-shadow:
+            0 0 40px rgba(0, 240, 255, 0.12),
+            inset 0 0 60px rgba(0, 240, 255, 0.04);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+}
+
+/* ─── HUD TOP ─────────────────────────────────────────────────────────────── */
+
+.gv-hud-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+    padding: 0 18px;
+    background: rgba(0, 240, 255, 0.04);
+    border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+    flex-shrink: 0;
+    z-index: 10;
+}
+
+.gv-hud-left,
+.gv-hud-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.gv-deco-block {
+    display: inline-block;
+    width: 6px;
+    height: 22px;
+    background: var(--third-color);
+    box-shadow: 4px 0 0 var(--secondary-color);
+    flex-shrink: 0;
+}
+
+.gv-prefix {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.5rem;
+    font-weight: 900;
+    color: var(--secondary-color);
+    opacity: 0.6;
+    letter-spacing: 2px;
+}
+
+.gv-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    font-weight: 900;
+    color: var(--secondary-color);
+    letter-spacing: 1px;
+}
+
+.gv-description {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: rgba(0, 240, 255, 0.85);
+    letter-spacing: 1.5px;
+    border-left: 2px solid var(--secondary-color);
+    padding-left: 12px;
+    text-transform: uppercase;
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
+}
+
+.gv-stat {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: rgba(0, 240, 255, 0.5);
+    letter-spacing: 1px;
+}
+
+.gv-stat-val {
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+    margin-right: 3px;
+}
+
+.gv-btn {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 900;
+    color: var(--main-bg-color);
+    background: var(--secondary-color);
+    border: none;
+    padding: 6px 14px;
+    cursor: pointer;
+    clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
+    transition: background 0.15s, color 0.15s;
+    letter-spacing: 1px;
+}
+
+.gv-btn:hover {
+    background: var(--third-color);
+}
+
+/* ─── SVG CANVAS ──────────────────────────────────────────────────────────── */
+
+.gv-svg {
+    display: block;
+    width: 100%;
+    flex: 1;           /* prend l'espace restant DANS le wrapper à hauteur fixe */
+    min-height: 0;     /* empêche le SVG de déborder en colonne flex */
+    user-select: none;
+    touch-action: none;
+}
+
+/* ─── HUD CORNER DECORATIONS ──────────────────────────────────────────────── */
+
+.gv-corner-line {
+    fill: var(--secondary-color);
+    opacity: 0.5;
+}
+
+/* ─── EDGES ───────────────────────────────────────────────────────────────── */
+
+.gv-edge line {
+    stroke: var(--secondary-color);
+    stroke-width: 1.5;
+    stroke-opacity: 0.45;
+    stroke-dasharray: 6 4;
+    animation: gv-dash-flow 1.2s linear infinite;
+}
+
+.gv-edge.active line {
+    stroke: var(--third-color);
+    stroke-opacity: 1;
+    stroke-width: 2;
+    stroke-dasharray: none;
+    filter: drop-shadow(0 0 4px var(--third-color));
+}
+
+.gv-edge.dimmed line {
+    stroke-opacity: 0.1;
+}
+
+.gv-edge.dimmed .gv-edge-label,
+.gv-edge.dimmed .gv-edge-label-bg {
+    opacity: 0.1;
+}
+
+.gv-edge-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 9px;
+    font-weight: 900;
+    fill: var(--secondary-color);
+    text-anchor: middle;
+    letter-spacing: 1px;
+    pointer-events: none;
+}
+
+.gv-edge.active .gv-edge-label {
+    fill: var(--third-color);
+}
+
+.gv-edge-label-bg {
+    fill: var(--main-bg-color);
+    rx: 0;
+}
+
+@keyframes gv-dash-flow {
+    to {
+        stroke-dashoffset: -10;
+    }
+}
+
+/* ─── NODES ───────────────────────────────────────────────────────────────── */
+
+.gv-node {
+    transition: opacity 0.2s;
+}
+
+.gv-node.dimmed {
+    opacity: 0.18;
+}
+
+.gv-node-bg {
+    fill: var(--third-color);
+    transition: fill 0.2s;
+}
+
+.gv-node.active .gv-node-bg {
+    fill: var(--third-color);
+}
+
+.gv-node-glow {
+    fill: none;
+    stroke: var(--third-color);
+    stroke-width: 2;
+    opacity: 0.6;
+    filter: blur(6px);
+}
+
+.gv-node-title-bar {
+    fill: var(--main-bg-color);
+}
+
+.gv-node.active .gv-node-title-bar {
+    fill: #0a0a0a;
+}
+
+.gv-node-accent {
+    fill: var(--secondary-color);
+    opacity: 0.8;
+}
+
+.gv-node.active .gv-node-accent {
+    fill: var(--secondary-color);
+    opacity: 1;
+    filter: drop-shadow(0 0 4px var(--secondary-color));
+}
+
+.gv-node-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px;
+    font-weight: 900;
+    fill: var(--secondary-color);
+    letter-spacing: 0.5px;
+    pointer-events: none;
+}
+
+.gv-node.active .gv-node-title {
+    fill: var(--third-color);
+}
+
+.gv-elem-bullet {
+    fill: var(--main-bg-color);
+    opacity: 0.4;
+}
+
+.gv-elem-text {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    fill: var(--main-bg-color);
+    pointer-events: none;
+}
+
+.gv-screw {
+    fill: var(--main-bg-color);
+    opacity: 0.25;
+}
+
+/* Hover micro-interaction */
+.gv-node:not(.dimmed):hover .gv-node-bg {
+    filter: brightness(1.08);
+}
+
+.gv-node:not(.dimmed):hover .gv-node-title {
+    letter-spacing: 1px;
+}
+
+/* ─── HUD BOTTOM BAR ──────────────────────────────────────────────────────── */
+
+.gv-hud-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 28px;
+    padding: 0 18px;
+    background: rgba(0, 240, 255, 0.03);
+    border-top: 1px solid rgba(0, 240, 255, 0.12);
+    flex-shrink: 0;
+}
+
+.gv-hint {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: rgba(0, 240, 255, 0.35);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.gv-zoom-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: rgba(0, 240, 255, 0.4);
+    letter-spacing: 1px;
+}
+
+/* ─── RESPONSIVE ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+    .gv-hud-top {
+        padding: 0 10px;
+        height: 42px;
+    }
+
+    .gv-title {
+        font-size: 0.75rem;
+    }
+
+    .gv-hint {
+        display: none;
+    }
+}
