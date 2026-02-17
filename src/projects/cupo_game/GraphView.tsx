@@ -303,7 +303,7 @@ const GraphView: React.FC<GraphViewProps> = ({ nodes, links, title = 'NODE MAP',
         }
     }, [svgPoint]);
 
-    const onPointerUp = useCallback((e: React.PointerEvent) => {
+    const onPointerUp = useCallback(() => {
         const sim = simRef.current;
         if (dragging.current && sim) {
             const s = sim.byId(dragging.current);
