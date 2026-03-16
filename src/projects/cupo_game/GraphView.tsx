@@ -30,12 +30,12 @@ interface GraphViewProps {
 
 // ─── Layout constants ─────────────────────────────────────────────────────────
 
-const NODE_W       = 168;
-const TITLE_H      = 38;
-const ELEM_H       = 18;
-const ELEM_PAD_TOP = 10;
-const ELEM_PAD_BOT = 12;
-const IDEAL_DIST   = 420;
+const NODE_W       = 130;
+const TITLE_H      = 28;
+const ELEM_H       = 14;
+const ELEM_PAD_TOP = 7;
+const ELEM_PAD_BOT = 9;
+const IDEAL_DIST   = 320;
 const REPULSION    = 35_000;
 const SPRING       = 0.03;
 const DAMP         = 0.72;

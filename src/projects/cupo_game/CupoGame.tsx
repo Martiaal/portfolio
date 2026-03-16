@@ -106,7 +106,7 @@ export const CupoGame = () => {
                 ]}
                 title={"APPRENTISSAGE DE LA POO"}
                 description={"Cupo World est le premier projet où j'ai eu l'occasion d'utiliser la programmation orientée objet. Voici les différentes classes créées à l'occasion, ainsi que les liens existants entre elles."}
-                height={"900px"}
+                height={"40rem"}
             />
         </div>
     )
